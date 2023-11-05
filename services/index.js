@@ -63,6 +63,9 @@ export const getPosts = async () => {
         publishedDate
         slug
         excerpt
+        content {
+          raw
+        }
         featuredImage {
           url
         }
@@ -98,6 +101,9 @@ export const getBookNotes = async () => {
         title
         author
         slug
+        bookNote {
+          raw
+        }
         bookCategory
         bookCover {
           url
@@ -124,4 +130,19 @@ export const getCategories = async () => {
   const result = await request(graphqlAPI, query);
 
   return result.categoryS;
+};
+
+export const getAbout = async () => {
+  const query = gql`
+    query MyQuery {
+      abouts {
+        details {
+          raw
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+
+  return result.abouts;
 };

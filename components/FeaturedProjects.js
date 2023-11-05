@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithubSquare, FaExternalLinkAlt } from "react-icons/fa";
 
 function FeaturedProjects({ featuredProjects }) {
   return (
-    <div className="mt-50 w-1/3 h-96 bg-white rounded-lg  border-2 p-3">
+    <div className="projectCard hover:boxShadow">
       <Image
         src={featuredProjects.projectImage.url}
         alt={featuredProjects.title}
@@ -19,13 +20,16 @@ function FeaturedProjects({ featuredProjects }) {
         {featuredProjects.description}
       </p>
 
-      <div className="flex justify-between">
-        <Link className="link" href="/">
-          Github
-        </Link>
-        <Link className="link" href="/">
-          Preview
-        </Link>
+      <div className="flex flex-row justify-between">
+        <div>Tags</div>
+        <div className="flex flex-row gap-2">
+          <Link href="/">
+            <FaGithubSquare size={23} />
+          </Link>
+          <Link href="/">
+            <FaExternalLinkAlt size={20} />
+          </Link>
+        </div>
       </div>
     </div>
   );

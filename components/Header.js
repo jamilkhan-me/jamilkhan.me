@@ -14,7 +14,7 @@ function Header() {
         <div>
           <Link href="/">
             <div className="flex items-center justify-between">
-              <h1 className="text-3xl  text-sky font-semibold font-Arizonia">
+              <h1 className="text-3xl  text-sky font-semibold font-Soul">
                 Mr.Khan
               </h1>
             </div>

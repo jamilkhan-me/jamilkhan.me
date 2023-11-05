@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function RecentPost({ post }) {
   return (
@@ -13,7 +14,9 @@ function RecentPost({ post }) {
         />
       </div>
       <div className=" w-96 flex flex-col justify-center ">
-        <h1 className="text-md font-bold">{post.title}</h1>
+        <Link href={`/blog/${post.slug}`}>
+          <h1 className="text-md font-bold underlines">{post.title}</h1>
+        </Link>
 
         <div className="flex flex-row justify-between  mt-3 font-light text-gray-500">
           <p>3 mins read</p>

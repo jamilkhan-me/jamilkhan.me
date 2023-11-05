@@ -5,7 +5,7 @@ import { FiGithub } from "react-icons/fi";
 function Card({ project }) {
   return (
     <div className="w-1/2 h-auto flex flex-row justify-between">
-      <div className="flex flex-col border-2 rounded-xl shadow-xl">
+      <div className="flex flex-col border-2 rounded-xl hover:shadow-2xl">
         <Image
           src={project.projectImage.url}
           alt={project.title}

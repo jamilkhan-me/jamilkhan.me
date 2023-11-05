@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function FeaturedPost({ post }) {
   return (
@@ -14,7 +15,9 @@ function FeaturedPost({ post }) {
       </div>
       <div className="w-1/2 flex flex-col justify-start">
         <p className="font-semibold text-md">{post.excerpt}</p>
-        <h1 className="text-2xl font-bold my-2">{post.title}</h1>
+        <Link href={`/blog/${post.slug}`}>
+          <h1 className="text-2xl font-bold my-2 underlines">{post.title}</h1>
+        </Link>
         <p className="font-light capitalize">
           while your current research focus may not directly align with becoming
           a software engineer, the skills you have developed in understanding

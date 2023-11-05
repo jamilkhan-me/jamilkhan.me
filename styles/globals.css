@@ -1,7 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Space+Grotesk&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=My+Soul&family=Rock+Salt&family=Space+Grotesk&display=swap");
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
 
 @layer utilities {
   .nav {
@@ -22,9 +63,21 @@
     @apply bg-gray-200 px-4 py-1 rounded-full capitalize;
   }
   .button {
-    @apply px-5 py-2 cursor-pointer  rounded-md text-lg hover:bg-blue-500 bg-blue-700 text-white;
+    @apply text-blue-700 border border-blue-600 py-4 px-6 rounded inline-flex items-center hover:bg-blue-600 hover:text-white;
   }
   .roundedButton {
-    @apply px-8 py-2 cursor-pointer  rounded-full text-lg hover:bg-blue-500 bg-blue-700 text-white;
+    @apply inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold leading-6 text-white bg-blue-600 border border-transparent rounded-full md:w-auto hover:bg-blue-500 focus:outline-none focus:ring-2 shadow-lg focus:ring-offset-2 focus:ring-blue-600;
+  }
+  .scaleEffect {
+    @apply hover:text-blue-700  transition duration-500 hover:scale-150;
+  }
+  .projectCard {
+    @apply rounded-lg m-2 border-2 p-5 shadow-xl bg-gradient-to-t from-gray-200;
+  }
+  .boxShadow {
+    @apply shadow-[rgba(1,1,122,0.4)];
+  }
+  .underlines {
+    @apply hover:text-blue-500 hover:underline;
   }
 }

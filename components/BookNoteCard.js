@@ -3,8 +3,8 @@ import Link from "next/link";
 
 function BookNoteCard({ book }) {
   return (
-    <Link href="/">
-      <div className="w-60 h-auto pb-4 border-2 rounded-xl shadow-lg hover:shadow-2xl cursor-pointer">
+    <Link href={`/notes/${book.slug}`}>
+      <div className="w-60 h-auto pb-4 border-2 rounded-xl shadow-lg hover:boxShadow cursor-pointer">
         <Image
           src={book.bookCover.url}
           alt={book.title}

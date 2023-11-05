@@ -1,9 +1,12 @@
+import Link from "next/link";
 import { LuCalendarDays } from "react-icons/lu";
 import { MdOutlineTimer } from "react-icons/md";
 function BlogCard({ blog }) {
   return (
     <div className="flex flex-col hover:bg-gray-100 p-5 cursor-pointer">
-      <h1 className="text-2xl font-bold capitalize my-3">{blog.title}</h1>
+      <Link href={`/blog/${blog.slug}`}>
+        <h1 className="text-2xl font-bold capitalize my-3">{blog.title}</h1>
+      </Link>
       <div className="flex flex-row gap-10 mb-3">
         <h1 className="flex flex-row gap-3 font-md text-gray-600">
           <LuCalendarDays size={23} /> {blog.publishedDate}

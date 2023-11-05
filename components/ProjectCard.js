@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithubSquare, FaExternalLinkAlt } from "react-icons/fa";
 
 function ProjectCard({ project }) {
   return (
     <div className="w-1/2 h-80">
-      <div className="bg-white rounded-lg m-2 border-2 p-5">
+      <div className="projectCard hover:boxShadow">
         <Image
           src={project.projectImage.url}
           alt={project.title}
@@ -19,12 +20,15 @@ function ProjectCard({ project }) {
         <p className="flex justify-center capitalize">{project.description}</p>
 
         <div className="flex flex-row justify-between mt-3">
-          <Link className="link" href={project.github}>
-            {project.github}
-          </Link>
-          <Link className="link" href={project.preview}>
-            {project.preview}
-          </Link>
+          <div>Tags</div>
+          <div className="flex flex-row gap-2">
+            <Link href={project.github}>
+              <FaGithubSquare size={28} />
+            </Link>
+            <Link href={project.preview}>
+              <FaExternalLinkAlt size={25} />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

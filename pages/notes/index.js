@@ -1,6 +1,7 @@
 import { getBookNotes } from "@/services";
 import BookNote from "@/components/books/BookNote";
 import BookHeading from "@/components/books/BookHeading";
+import Link from "next/link";
 
 function BookNotes({ notes }) {
   return (
