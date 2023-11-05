@@ -12,7 +12,9 @@ function BookNote({ note }) {
           width={500}
           height={800}
         />
-        <h1 className="flex justify-center text-xl font-bold">{note.title}</h1>
+        <h1 className="flex justify-center text-lg px-4 font-bold">
+          {note.title}
+        </h1>
         <h1 className="flex justify-center font-md">{note.author}</h1>
       </div>
     </Link>
