@@ -177,7 +177,7 @@ export default function Home({
           </div>
         </div>
       </section>
-      <section className="w-full h-auto my-20 gap-14">
+      <section className="w-full h-auto my-32 gap-14">
         <div className="flex flex-row justify-between gap-5">
           <div className="w-2/3 h-auto flex flex-col justify-start gap-5">
             <div className="mb-5 ">
