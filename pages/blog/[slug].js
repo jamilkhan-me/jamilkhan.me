@@ -5,6 +5,17 @@ import { useState } from "react";
 import { FcLike } from "react-icons/fc";
 import { MdIosShare, MdOutlineTimer } from "react-icons/md";
 import { LuCalendarDays } from "react-icons/lu";
+import Link from "next/link";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from "next-share";
 
 function BlogDetails({ post }) {
   const [count, setCount] = useState(1);
@@ -32,10 +43,10 @@ function BlogDetails({ post }) {
             <MdIosShare size={25} />
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center object-contain object-center">
           <Image
             src={post.featuredImage.url}
-            className="rounded-lg w-[35rem] h-80 object-cover object-center my-5"
+            className="rounded-lg w-full  h-96 object-cover object-center my-5"
             alt={post.title}
             width={500}
             height={500}
@@ -46,34 +57,63 @@ function BlogDetails({ post }) {
         </div>
       </div>
       <div className="w-1/3 flex flex-col gap-5">
-        <div className="w-full  h-auto bg-gray-200 p-5 shadow-lg rounded-lg ">
-          <h1 className="text-xl font-bold uppercase">About me</h1>
-          <Image
-            src="/static/profile.png"
-            className="bg-white rounded-xl w-32 h-32 my-5"
-            alt="Jamil Khan"
-            width={100}
-            height={100}
-          />
-          <h1>
-            Hello and Welcome to my little digital garden. <br /> My name is
-            Jamil Khan. I am a software developer who is passionate about
-            creating digital products.I love to write clean code and staying
-            current with industry trends
-          </h1>
-          <h1>
-            Beyond coding, I love reading technical articles and non-fictional
-            books. I strongly believe in continunous learning and improving
-            myself
-          </h1>
-        </div>
-        <div className="w-full  h-auto bg-gray-200 p-5 shadow-lg rounded-lg gap-5">
-          <h1>Post Details</h1>
-          <li>Published November 03, 2023</li>
-          <h1>CATEGORY</h1>
-          <li>Frontend</li>
-          <h1>Tags</h1>
-          <h1>#redux, #api, #javascript</h1>
+        <div className="w-full  h-auto bg-gray-200 p-5 shadow-lg divide-y-2 divide-gray-300 rounded-lg ">
+          <h1 className="text-xl font-bold uppercase">Written by</h1>
+          <div className="flex flex-row gap-5 my-5 pt-5">
+            <Image
+              src="/static/profile.png"
+              className="bg-white rounded-full w-24 h-24 "
+              alt="Jamil Khan"
+              width={100}
+              height={100}
+            />
+            <span className="flex flex-col ">
+              <h1 className="text-lg font-bold">Jamil Khan</h1>
+              <Link className="text-blue-600" href="/">
+                <h1>@jamilkhan</h1>
+              </Link>
+            </span>
+          </div>
+          <div className="py-10">
+            <h1 className="font-bold pb-3 uppercase">Post Details</h1>
+            <li>Published November 03, 2023</li>
+          </div>
+          <div className="py-10">
+            <h1 className="font-bold pb-3">CATEGORY</h1>
+            <li>Frontend</li>
+          </div>
+          <div className="py-10">
+            <h1 className="font-bold pb-3 uppercase">Tags</h1>
+            <h1 className="font-semibold">#redux, #api, #javascript</h1>
+          </div>
+          <div className="py-10">
+            <h1 className="font-bold pb-3 uppercase">Share</h1>
+            <LinkedinShareButton
+              url={`https://jamilkhan.me/blog/${post.slug}`}
+              title={post.title}
+            >
+              <LinkedinIcon className="mr-3" size={35} round />
+            </LinkedinShareButton>
+            <TwitterShareButton
+              url={`https://jamilkhan.me/blog/${post.slug}`}
+              title={post.title}
+            >
+              <TwitterIcon className="mr-3" size={35} round />
+            </TwitterShareButton>
+            <FacebookShareButton
+              url={`https://jamilkhan.me/blog/${post.slug}`}
+              title={post.title}
+            >
+              <FacebookIcon className="mr-3" size={35} round />
+            </FacebookShareButton>
+
+            <WhatsappShareButton
+              url={`https://jamilkhan.me/blog/${post.slug}`}
+              title={post.title}
+            >
+              <WhatsappIcon size={35} round />
+            </WhatsappShareButton>
+          </div>
         </div>
       </div>
     </div>
@@ -98,5 +138,6 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { post },
+    revalidate: 600,
   };
 }

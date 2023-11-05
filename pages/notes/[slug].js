@@ -5,6 +5,16 @@ import { FcLike } from "react-icons/fc";
 import { MdIosShare, MdOutlineTimer } from "react-icons/md";
 import { LuCalendarDays } from "react-icons/lu";
 import Image from "next/image";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from "next-share";
 
 function Note({ note }) {
   const [count, setCount] = useState(1);
@@ -14,8 +24,8 @@ function Note({ note }) {
   }
   return (
     <div className="mt-48 flex flex-row justify-between gap-8">
-      <div>
-        <div>
+      <div className="w-2/3">
+        <div className="mr-12">
           <h1 className="text-2xl font-bold">Book Summary</h1>
           <h1 className="text-6xl font-bold my-5">
             {note.title}, <br /> by {note.author}
@@ -42,23 +52,56 @@ function Note({ note }) {
           <RichText content={note.bookNote.raw} />
         </div>
       </div>
-      <div className="flex flex-col">
-        <div className="rounded-lg border-2 p-4">
-          <Image
-            src={note.bookCover.url}
-            className="rounded-lg w-72 h-96 object-cover object-center "
-            alt={note.title}
-            width={500}
-            height={500}
-          />
-
-          <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
-          <div className="flex flex-col gap-2">
+      <div className="w-1/3 flex flex-col gap-5">
+        <div className="w-full  h-auto bg-gray-200 p-5 shadow-lg divide-y-2 divide-gray-300 rounded-lg ">
+          <div className="flex items-center justify-center mb-8">
+            <Image
+              src={note.bookCover.url}
+              className="rounded-lg w-72 h-96 object-cover object-center  "
+              alt={note.title}
+              width={500}
+              height={500}
+            />
+          </div>
+          <div className="flex flex-col py-8 ">
             <h1 className="text-3xl font-bold">{note.title}</h1>
             <h1 className="text-xl font-semibold">by {note.author}</h1>
-            <h1>Rating: 8.96/10</h1>
-            <h1>Genres: Productivity, Self-help</h1>
-            <h1>Completed Reading: Jun 29, 2023</h1>
+          </div>
+          <div className="py-10">
+            <h1 className="font-bold pb-3 uppercase">Genres</h1>
+            <li>Success, Personal development, Motivation, Self-help</li>
+          </div>
+          <div className="py-10">
+            <h1 className="font-bold pb-3 uppercase">Date read</h1>
+            <li>November 05, 2023</li>
+          </div>
+          <div className="py-10">
+            <h1 className="font-bold pb-3 uppercase">Share</h1>
+            <LinkedinShareButton
+              url={`https://jamilkhan.me/notes/slug`}
+              title={note.title}
+            >
+              <LinkedinIcon className="mr-3" size={35} round />
+            </LinkedinShareButton>
+            <TwitterShareButton
+              url={`https://jamilkhan.me/notes/slug`}
+              title={note.title}
+            >
+              <TwitterIcon className="mr-3" size={35} round />
+            </TwitterShareButton>
+            <FacebookShareButton
+              url={`https://jamilkhan.me/notes/slug`}
+              title={note.title}
+            >
+              <FacebookIcon className="mr-3" size={35} round />
+            </FacebookShareButton>
+
+            <WhatsappShareButton
+              url={`https://jamilkhan.me/notes/slug`}
+              title={note.title}
+            >
+              <WhatsappIcon size={35} round />
+            </WhatsappShareButton>
           </div>
         </div>
         <div></div>
@@ -85,5 +128,6 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { note },
+    revalidate: 600,
   };
 }

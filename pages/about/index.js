@@ -61,6 +61,7 @@ export async function getStaticProps() {
 
   return {
     props: { about },
+    revalidate: 600,
   };
 }
 export default About;

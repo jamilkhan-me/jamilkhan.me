@@ -29,6 +29,7 @@ export async function getStaticProps() {
 
   return {
     props: { notes },
+    revalidate: 600,
   };
 }
 

@@ -29,6 +29,7 @@ export async function getStaticProps() {
   const categories = await getCategories();
   return {
     props: { posts, categories },
+    revalidate: 600,
   };
 }
 

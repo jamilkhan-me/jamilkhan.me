@@ -239,5 +239,6 @@ export async function getStaticProps() {
   const bookNotes = await getBookNotes();
   return {
     props: { projects, posts, featuredPosts, featuredProjects, bookNotes },
+    revalidate: 600,
   };
 }

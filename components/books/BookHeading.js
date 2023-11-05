@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 function BookHeading() {
@@ -9,11 +10,11 @@ function BookHeading() {
           Digital Bookself
         </h1>
         <p className=" text-lg text-justify capitalize">
-          Much of the valuable knowledge I've gained has been sourced from
-          books, articles, talks, and various forms of media. Inspired by{" "}
+          Much of the valuable knowledge I have gained has been sourced from
+          books, articles, talks, and various forms of media. Inspired by
           <Link href="google.com">Derek Sivers</Link> and how he shares his
-          notes on books, I've chosen to make my own summaries and notes from my
-          readings publicly available.
+          notes on books, I have chosen to make my own summaries and notes from
+          my readings publicly available.
         </p>
         <h1 className="text-xl font-bold my-3">
           Click on any Thumbnail below to get the notes
@@ -23,7 +24,13 @@ function BookHeading() {
         <h1 className="text-lg font-semibold flex justify-center mb-3">
           Currently reading{" "}
         </h1>
-        <img src="/static/avatar.png" alt="book image" />
+        <Image
+          src="/static/digitalMinimalism.jpeg"
+          alt="book image"
+          className="w-36 h-52"
+          width={500}
+          height={500}
+        />
       </div>
     </div>
   );
