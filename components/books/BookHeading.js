@@ -3,8 +3,8 @@ import Link from "next/link";
 
 function BookHeading() {
   return (
-    <div className="flex flex-row justify-between">
-      <div className="w-1/2 mx-20">
+    <div className="flex flex-row sm:flex-col justify-between">
+      <div className="w-1/2 sm:w-full mx-20 sm:mx-2 ">
         <h1 className="text-2xl font-bold">Welcome to my</h1>
         <h1 className="text-6xl font-bold mb-5 text-yellow-500 ">
           Digital Bookself
@@ -20,7 +20,7 @@ function BookHeading() {
           Click on any Thumbnail below to get the notes
         </h1>
       </div>
-      <div className="flex flex-col justify-center mx-20 border-2 p-5 shadow-xl rounded-xl">
+      <div className="flex flex-col sm:w-48 sm:h-auto justify-center mx-20 border-2 p-5 shadow-xl rounded-xl">
         <h1 className="text-lg font-semibold flex justify-center mb-3">
           Currently reading{" "}
         </h1>

@@ -7,7 +7,7 @@ function BookNotes({ notes }) {
   return (
     <>
       <div className="mt-32">
-        <div className="my-10 h-72">
+        <div className="my-10 w-full h-auto h-72">
           <BookHeading />
         </div>
         <hr className="mb-5" />

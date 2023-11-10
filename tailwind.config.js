@@ -24,11 +24,18 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: { max: "420px" },
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       fontFamily: {
         Grostek: ["Space Grotesk", "sans-serif"],
         rock: ["Rock Salt", "cursive"],
-        Soul: ["My Soul", "cursive"],
+        Soul: ["Waterfall", "cursive"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

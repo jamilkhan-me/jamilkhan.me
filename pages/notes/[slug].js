@@ -23,15 +23,15 @@ function Note({ note }) {
     setCount(count + 1);
   }
   return (
-    <div className="mt-48 flex flex-row justify-between gap-8">
-      <div className="w-2/3">
-        <div className="mr-12">
-          <h1 className="text-2xl font-bold">Book Summary</h1>
-          <h1 className="text-6xl font-bold my-5">
+    <div className="mt-48 flex flex-row sm:flex-col justify-between gap-8">
+      <div className="w-2/3 sm:w-full">
+        <div className="mr-12 sm:mr-2">
+          <h1 className="text-2xl sm:text-xl font-bold">Book Summary</h1>
+          <h1 className="text-6xl sm:text-4xl font-bold my-5">
             {note.title}, <br /> by {note.author}
           </h1>
           <div className="flex flex-row justify-between gap-5 my-5 border-y-2 py-2">
-            <div className="flex flex-row gap-8 text-sm">
+            <div className="flex flex-row gap-8 sm:gap-2 text-sm">
               <h1 className="flex flex-row gap-3 font-md text-gray-600">
                 <LuCalendarDays size={20} /> Nov 04, 2023
               </h1>
@@ -52,7 +52,7 @@ function Note({ note }) {
           <RichText content={note.bookNote.raw} />
         </div>
       </div>
-      <div className="w-1/3 flex flex-col gap-5">
+      <div className="w-1/3 sm:w-full flex flex-col gap-5">
         <div className="w-full  h-auto bg-gray-200 p-5 shadow-lg divide-y-2 divide-gray-300 rounded-lg ">
           <div className="flex items-center justify-center mb-8">
             <Image

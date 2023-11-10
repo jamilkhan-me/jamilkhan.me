@@ -12,15 +12,15 @@ import { RiTwitterXLine } from "react-icons/ri";
 
 function About({ about }) {
   return (
-    <div className="flex flex-row justify-between gap-10 mx-10 mt-48">
-      <div className="w-2/3">
+    <div className="flex flex-row sm:flex-col-reverse justify-between gap-10 mx-10 mt-48">
+      <div className="w-2/3 sm:w-full">
         <div className="prose">
           {about.map((abot) => (
             <RichText key={abot.details} content={abot.details.raw} />
           ))}
         </div>
       </div>
-      <div className="w-1/3 flex flex-col">
+      <div className="w-1/3 sm:w-full flex flex-col">
         <div>
           <Image
             className="w-72 h-96 border-4 p-5"
@@ -30,7 +30,7 @@ function About({ about }) {
             height={500}
           />
         </div>
-        <div className="w-72 rounded-lg flex flex-col gap-5 mt-5 p-5 border-4">
+        <div className="sm:hidden w-72 rounded-lg flex flex-col gap-5 mt-5 p-5 border-4">
           <span className="flex flex-row gap-4 text-xl font-semibold">
             Resume <FaCloudDownloadAlt size={27} />
           </span>

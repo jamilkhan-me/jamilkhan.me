@@ -4,7 +4,7 @@ import { FaGithubSquare, FaExternalLinkAlt } from "react-icons/fa";
 
 function ProjectCard({ project }) {
   return (
-    <div className="w-1/2 h-80">
+    <div className="w-1/2 h-80 sm:w-96 sm:h-96">
       <div className="projectCard hover:boxShadow">
         <Image
           src={project.projectImage.url}

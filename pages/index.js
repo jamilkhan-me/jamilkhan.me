@@ -36,29 +36,29 @@ export default function Home({
   bookNotes,
 }) {
   return (
-    <div className="flex flex-col gap-40">
-      <section className=" flex flex-row justify-between mt-40 gap-14">
-        <div className=" w-2/3 h-auto flex flex-col justify-center">
-          <h1 className="text-6xl font-bold tracking-wider ">
+    <div className="flex flex-col justify-between gap-40">
+      <section className=" flex flex-row justify-between mt-40 gap-14 sm:flex-col-reverse ">
+        <div className=" w-2/3 h-auto flex flex-col justify-center sm:w-[26rem]">
+          <h1 className="text-6xl font-bold tracking-wider sm:text-4xl sm:text-center ">
             Molding Ideas into Reality with the Art of
             <span className=" highlight">CODE</span>
             and
             <span className="highlight">DESIGN</span>
           </h1>
-          <p className="pt-8 text-xl">
+          <p className="pt-8 text-xl sm:text-center sm:mx-1">
             As a proficient full-stack developer, I specialize in bringing
             concepts to life through cutting-edge web applications. Dive into my
             recent projects and writings to see my mastery in React.js and web
             development.
           </p>
-          <div className="flex flex-row mt-5">
+          <div className="flex flex-row sm:justify-center mt-5">
             <Button>Download CV</Button>
           </div>
         </div>
         <div className="w-1/3">
-          <div className="bg-transparent cursor-pointer group perspective flex flex-col  w-72 h-[29rem] rounded-xl drop-shadow-lg shadow-gray-900  ">
+          <div className="bg-transparent cursor-pointer group perspective flex flex-col sm:mx-16 w-72 h-[29rem] rounded-xl drop-shadow-lg shadow-gray-900">
             <div className="rounded-xl relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-              <div className=" absolute backface-hidden border-2 w-full h-full">
+              <div className=" absolute backface-hidden  w-full h-full">
                 <div className="h-1/2 bg-blue-400 rounded-t-lg flex flex-col justify-center ">
                   <div className="rounded-xl flex justify-center w-12 h-3 mt-3 mx-auto bg-white"></div>
                   <div>
@@ -150,18 +150,18 @@ export default function Home({
           </div>
         </div>
       </section>
-      <section className="w-full h-screen mt-20 gap-14">
+      <section className="w-full h-screen sm:h-auto my-20 gap-14">
         <div>
           <h1 className="flex justify-center  text-4xl font-bold my-10">
             <span className="highlight ">Portfolio</span> section
           </h1>
-          <div className="flex flex-col gap-10">
-            <div className="flex flex-row justify-between w-full h-60 object-cover mb-60">
+          <div className="flex flex-col justify-between gap-10 sm:gap-0 ">
+            <div className="flex flex-row sm:flex-col sm:gap-32 justify-between w-full h-auto object-cover mb-60 sm:mb-40">
               {projects.map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
             </div>
-            <div className=" w-full h-50 flex flex-row justify-start gap-5">
+            <div className=" w-full h-50 flex flex-row sm:flex-col justify-start gap-5">
               {featuredProjects.map((featuredProjects) => (
                 <FeaturedProjects
                   key={featuredProjects.title}
@@ -177,14 +177,14 @@ export default function Home({
           </div>
         </div>
       </section>
-      <section className="w-full h-auto my-32 gap-14">
-        <div className="flex flex-row justify-between gap-5">
-          <div className="w-2/3 h-auto flex flex-col justify-start gap-5">
+      <section className="w-full h-auto my-32 sm:my-10 gap-14">
+        <div className="flex flex-row sm:flex-col justify-between gap-5">
+          <div className="w-2/3 sm:w-96 h-auto flex flex-col justify-start gap-5">
             <div className="mb-5 ">
-              <h1 className="text-4xl font-bold">
+              <h1 className="text-4xl font-bold flex sm:justify-center">
                 Popular <span className="highlight">Posts</span>
               </h1>
-              <p className="my-5 font-semibold tracking-wider">
+              <p className="my-5 font-semibold tracking-wider flex sm:justify-center">
                 Do not miss the latest trends
               </p>
             </div>
@@ -194,7 +194,7 @@ export default function Home({
               ))}
             </div>
           </div>
-          <div className="w-1/3 h-auto border-2 p-4 bg-gray-200 rounded-xl">
+          <div className="w-1/3 sm:w-96 h-auto border-2 p-4 bg-gray-200 rounded-xl">
             <div className="flex flex-row justify-between mb-5">
               <h1 className="text-2xl font-bold border-b-4 border-yellow-500">
                 Recent posts
@@ -212,11 +212,11 @@ export default function Home({
           </div>
         </div>
       </section>
-      <section className="w-full h-screen">
+      <section className="w-full h-screen sm:h-auto">
         <h1 className="flex justify-center text-4xl font-bold mb-8">
           My <span className="highlight">Digital BookSelf</span>
         </h1>
-        <div className="flex flex-row justify-between flex-wrap gap-5">
+        <div className="flex flex-row sm:flex-col justify-between flex-wrap gap-5">
           {bookNotes.map((book) => (
             <BookNoteCard key={book.title} book={book} />
           ))}

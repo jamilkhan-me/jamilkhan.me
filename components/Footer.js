@@ -9,7 +9,7 @@ import {
 function Footer() {
   return (
     <footer>
-      <div className="mt-16 flex flex-col items-center">
+      <div className="mt-16 sm:w-full flex flex-col items-center">
         <div className="mb-3 flex space-x-4">
           <FaGithubSquare size={30} />
           <FaFacebookSquare size={30} />

@@ -4,7 +4,7 @@ import { FaGithubSquare, FaExternalLinkAlt } from "react-icons/fa";
 
 function FeaturedProjects({ featuredProjects }) {
   return (
-    <div className="projectCard hover:boxShadow">
+    <div className="projectCard hover:boxShadow sm:w-96 sm:h-96">
       <Image
         src={featuredProjects.projectImage.url}
         alt={featuredProjects.title}

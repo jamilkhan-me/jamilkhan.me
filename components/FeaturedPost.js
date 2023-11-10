@@ -3,8 +3,8 @@ import Link from "next/link";
 
 function FeaturedPost({ post }) {
   return (
-    <div className=" flex flex-row justify-start w-full gap-6">
-      <div className="w-2/5">
+    <div className=" flex flex-row sm:flex-col justify-start w-full gap-6">
+      <div className="w-2/5 sm:w-96">
         <Image
           src={post.featuredImage.url}
           className="w-96 h-60 border-2 rounded-xl"
@@ -13,7 +13,7 @@ function FeaturedPost({ post }) {
           height={500}
         />
       </div>
-      <div className="w-1/2 flex flex-col justify-start">
+      <div className="w-1/2 sm:w-96 flex flex-col justify-start">
         <p className="font-semibold text-md">{post.excerpt}</p>
         <Link href={`/blog/${post.slug}`}>
           <h1 className="text-2xl font-bold my-2 underlines">{post.title}</h1>

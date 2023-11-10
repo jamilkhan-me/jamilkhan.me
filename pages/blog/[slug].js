@@ -24,11 +24,11 @@ function BlogDetails({ post }) {
     setCount(count + 1);
   }
   return (
-    <div className="flex flex-row justify-between gap-10 mt-48">
-      <div className="w-2/3">
-        <h1 className="text-4xl font-bold my-5">{post.title}</h1>
+    <div className="flex flex-row sm:flex-col justify-between gap-10 mt-48">
+      <div className="w-2/3 sm:w-full">
+        <h1 className="text-4xl sm:text-3xl font-bold my-5">{post.title}</h1>
         <div className="flex flex-row justify-between gap-5 my-5 border-y-2 py-2">
-          <div className="flex flex-row gap-8 text-sm">
+          <div className="flex flex-row gap-8 sm:gap-2 text-sm">
             <h1 className="flex flex-row gap-3 font-md text-gray-600">
               <LuCalendarDays size={20} /> Nov 04, 2023
             </h1>
@@ -56,7 +56,7 @@ function BlogDetails({ post }) {
           <RichText content={post.content.raw} />
         </div>
       </div>
-      <div className="w-1/3 flex flex-col gap-5">
+      <div className="w-1/3 sm:w-full flex flex-col gap-5">
         <div className="w-full  h-auto bg-gray-200 p-5 shadow-lg divide-y-2 divide-gray-300 rounded-lg ">
           <h1 className="text-xl font-bold uppercase">Written by</h1>
           <div className="flex flex-row gap-5 my-5 pt-5">
