@@ -1,9 +1,8 @@
 // import { getPosts } from "@/services";
 import Link from "next/link";
 import headerNavLinks from "@/data/headerNavLinks";
-import Image from "next/image";
-import SectionContainer from "./SectionContainer";
-import Navbar from "./MobileNav";
+import MobileNav from "./MobileNav";
+
 // import ThemeSwitch from "./ThemeSwitch";
 
 // import SearchButton from "./SearchButton";
@@ -11,7 +10,7 @@ import Navbar from "./MobileNav";
 function Header() {
   return (
     <header className=" ">
-      <div className="flex flex-row justify-between z-50 fixed backdrop-blur-sm  rounded-lg gap-[30rem]  p-5">
+      <div className="sm:hidden flex flex-row justify-between z-50 fixed backdrop-blur-sm  rounded-lg gap-[30rem]  p-5">
         <div>
           <Link href="/">
             <div className="flex items-center justify-between">
@@ -26,7 +25,7 @@ function Header() {
             <Link
               key={link.title}
               href={link.href}
-              className="sm:hidden text-lg font-bold text-gray-900 dark:text-gray-100 sm:block nav"
+              className=" text-lg font-bold text-gray-900 dark:text-gray-100 sm:block nav"
             >
               {link.title}
             </Link>
@@ -35,6 +34,7 @@ function Header() {
           {/* <Navbar /> */}
         </div>
       </div>
+      <MobileNav />
     </header>
   );
 }
