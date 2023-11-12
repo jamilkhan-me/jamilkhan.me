@@ -20,7 +20,7 @@ function RecentPost({ post }) {
 
         <div className="flex flex-row justify-between  mt-3 font-light text-gray-500">
           <p>3 mins read</p>
-          <p>Oct 15, 2023</p>
+          <p>{post.publishedDate}</p>
         </div>
       </div>
     </div>

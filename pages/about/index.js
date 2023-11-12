@@ -9,6 +9,7 @@ import {
   FaInstagramSquare,
 } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
+import Link from "next/link";
 
 function About({ about }) {
   return (
@@ -31,25 +32,50 @@ function About({ about }) {
           />
         </div>
         <div className="sm:hidden w-72 rounded-lg flex flex-col gap-5 mt-5 p-5 border-4">
-          <span className="flex flex-row gap-4 text-xl font-semibold">
+          <Link
+            href="/static/Resume.pdf"
+            target="_blank"
+            download="Jamil khan Resume"
+            className="flex flex-row gap-4 text-xl font-semibold hover:text-blue-600"
+          >
             Resume <FaCloudDownloadAlt size={27} />
-          </span>
+          </Link>
           <h1>Follow me on</h1>
-          <span className="flex flex-row gap-2">
+          <Link
+            href="https://www.linkedin.com/in/jamilkhan-nu/"
+            target="_blank"
+            className="flex flex-row gap-2 hover:text-blue-600"
+          >
             <FaLinkedin size={27} /> /in/jamilkhan
-          </span>
-          <span className="flex flex-row gap-2">
+          </Link>
+          <Link
+            href="https://twitter.com/JamilkhanInfo"
+            target="_blank"
+            className="flex flex-row gap-2 hover:text-blue-600"
+          >
             <RiTwitterXLine size={27} /> @jamillkhan
-          </span>
-          <span className="flex flex-row gap-2">
+          </Link>
+          <Link
+            href="https://github.com/JamilKhan-nu"
+            target="_blank"
+            className="flex flex-row gap-2 hover:text-blue-600"
+          >
             <FaGithubSquare size={27} /> @jamilkhan
-          </span>
-          <span className="flex flex-row gap-2">
+          </Link>
+          <Link
+            href="/"
+            target="_blank"
+            className="flex flex-row gap-2 hover:text-blue-600"
+          >
             <FaFacebookSquare size={27} /> @jamilkhan
-          </span>
-          <span className="flex flex-row gap-2">
+          </Link>
+          <Link
+            href="/"
+            target="_blank"
+            className="flex flex-row gap-2 hover:text-blue-600"
+          >
             <FaInstagramSquare size={27} /> @jamillkhan
-          </span>
+          </Link>
         </div>
       </div>
     </div>

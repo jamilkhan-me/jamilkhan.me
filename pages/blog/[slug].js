@@ -1,4 +1,4 @@
-import { getPosts } from "@/services";
+import { getFeaturedPosts, getPosts } from "@/services";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import Image from "next/image";
 import { useState } from "react";
@@ -76,15 +76,15 @@ function BlogDetails({ post }) {
           </div>
           <div className="py-10">
             <h1 className="font-bold pb-3 uppercase">Post Details</h1>
-            <li>Published November 03, 2023</li>
+            <li>Published {post.publishedDate}</li>
           </div>
           <div className="py-10">
             <h1 className="font-bold pb-3">CATEGORY</h1>
-            <li>Frontend</li>
+            <li>{post.categoryS.name}</li>
           </div>
           <div className="py-10">
             <h1 className="font-bold pb-3 uppercase">Tags</h1>
-            <h1 className="font-semibold">#redux, #api, #javascript</h1>
+            <h1 className="font-semibold">{post.tag}</h1>
           </div>
           <div className="py-10">
             <h1 className="font-bold pb-3 uppercase">Share</h1>

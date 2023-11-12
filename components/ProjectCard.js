@@ -20,7 +20,7 @@ function ProjectCard({ project }) {
         <p className="flex justify-center capitalize">{project.description}</p>
 
         <div className="flex flex-row justify-between mt-3">
-          <div>Tags</div>
+          <p className="font-semibold">{project.tag}</p>
           <div className="flex flex-row gap-2">
             <Link href={project.github}>
               <FaGithubSquare size={28} />

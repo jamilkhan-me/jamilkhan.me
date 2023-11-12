@@ -10,7 +10,7 @@ import MobileNav from "./MobileNav";
 function Header() {
   return (
     <header className=" ">
-      <div className="sm:hidden flex flex-row justify-between z-50 fixed backdrop-blur-sm  rounded-lg gap-[30rem]  p-5">
+      <div className="sm:hidden flex flex-row justify-between z-50 fixed backdrop-blur-sm  rounded-lg gap-[36rem] p-5">
         <div>
           <Link href="/">
             <div className="flex items-center justify-between">
@@ -20,7 +20,7 @@ function Header() {
             </div>
           </Link>
         </div>
-        <div className="flex items-center space-x-4 leading-5 sm:space-x-6 ">
+        <div className="flex items-center space-x-8 leading-5 sm:space-x-6 ">
           {headerNavLinks.map((link) => (
             <Link
               key={link.title}

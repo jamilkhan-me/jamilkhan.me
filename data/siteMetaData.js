@@ -19,6 +19,8 @@ const siteMetadata = {
   youtube: "https://youtube.com",
   linkedin: "https://www.linkedin.com",
   locale: "en-US",
+  profile:
+    "My name is Jamil Khan. I am a software developer who loves to write clean code and staying current with industry trends. Beyond coding, I love reading technical articles and non-fictional books. I strongly believe in continunous learning and improving myself.",
 };
 
 module.exports = siteMetadata;

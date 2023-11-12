@@ -8,6 +8,7 @@ export const getProjects = async () => {
       projects(skip: 2) {
         description
         title
+        tag
         github
         preview
         projectImage {
@@ -27,6 +28,7 @@ export const getFeaturedProjects = async () => {
       featuredProjects {
         title
         slug
+        tag
         previewLink
         githubLink
         description
@@ -60,6 +62,7 @@ export const getPosts = async () => {
     query MyQuery {
       posts {
         title
+        tag
         publishedDate
         slug
         excerpt
@@ -68,6 +71,9 @@ export const getPosts = async () => {
         }
         featuredImage {
           url
+        }
+        categoryS {
+          name
         }
       }
     }
@@ -81,8 +87,12 @@ export const getFeaturedPosts = async () => {
     query MyQuery {
       featuredPosts {
         title
-        slud
+        slug
         excerpt
+        updatedAt
+        content {
+          raw
+        }
         featuredImage {
           url
         }

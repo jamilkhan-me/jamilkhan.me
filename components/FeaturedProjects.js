@@ -21,12 +21,12 @@ function FeaturedProjects({ featuredProjects }) {
       </p>
 
       <div className="flex flex-row justify-between">
-        <div>Tags</div>
+        <p className="text-sm font-semibold">{featuredProjects.tag}</p>
         <div className="flex flex-row gap-2">
-          <Link href="/">
+          <Link href={featuredProjects.githubLink}>
             <FaGithubSquare size={23} />
           </Link>
-          <Link href="/">
+          <Link href={featuredProjects.previewLink}>
             <FaExternalLinkAlt size={20} />
           </Link>
         </div>

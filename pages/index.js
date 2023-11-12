@@ -52,7 +52,14 @@ export default function Home({
             development.
           </p>
           <div className="flex flex-row sm:justify-center mt-5">
-            <Button>Download CV</Button>
+            <Link
+              className="button"
+              href="/static/Resume.pdf"
+              download="Jamil khan resume"
+              target="_blank"
+            >
+              <button type="button">Download CV</button>
+            </Link>
           </div>
         </div>
         <div className="w-1/3">
@@ -99,32 +106,26 @@ export default function Home({
                 <div className="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-24">
                   <h1 className="text-3xl font-semibold mb-3">Hello 👋</h1>
 
-                  <p>
-                    My name is Jamil Khan. I am a software developer who loves
-                    to write clean code and staying current with industry
-                    trends. Beyond coding, I love reading technical articles and
-                    non-fictional books. I strongly believe in continunous
-                    learning and improving myself.
-                  </p>
+                  <p>{siteMetadata.profile}</p>
                   <p className="my-5 text-lg font-bold">Follow Me </p>
                   <div className=" flex flex-row gap-2 font-semibold text-gray-700 ">
                     <Link
                       className="scaleEffect "
-                      href="https://twitter.com"
+                      href="https://twitter.com/JamilkhanInfo"
                       target="_blank"
                     >
                       <RiTwitterXLine size={23} />
                     </Link>
                     <Link
                       className="scaleEffect "
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/jamilkhan-nu/"
                       target="_blank"
                     >
                       <FaLinkedin size={23} />
                     </Link>
                     <Link
                       className="scaleEffect "
-                      href="https://github.com"
+                      href="https://github.com/JamilKhan-nu"
                       target="_blank"
                     >
                       <FaGithubSquare size={23} />
