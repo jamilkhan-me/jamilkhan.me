@@ -13,7 +13,7 @@ import Link from "next/link";
 
 function About({ about }) {
   return (
-    <div className="flex flex-row sm:flex-col-reverse justify-between gap-10 mx-10 mt-48">
+    <div className="flex flex-row sm:flex-col-reverse justify-between gap-10 mx-10 mt-48 sm:mt-20">
       <div className="w-2/3 sm:w-full">
         <div className="prose">
           {about.map((abot) => (

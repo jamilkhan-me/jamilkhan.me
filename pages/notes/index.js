@@ -6,8 +6,8 @@ import Link from "next/link";
 function BookNotes({ notes }) {
   return (
     <>
-      <div className="mt-32">
-        <div className="my-10 w-full h-auto h-72">
+      <div className="mt-32 sm:mt-20">
+        <div className="my-10 w-full h-auto">
           <BookHeading />
         </div>
         <hr className="mb-5" />

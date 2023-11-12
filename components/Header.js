@@ -2,6 +2,7 @@
 import Link from "next/link";
 import headerNavLinks from "@/data/headerNavLinks";
 import MobileNav from "./MobileNav";
+import Logo from "./Logo";
 
 // import ThemeSwitch from "./ThemeSwitch";
 
@@ -9,14 +10,18 @@ import MobileNav from "./MobileNav";
 
 function Header() {
   return (
-    <header className=" ">
-      <div className="sm:hidden flex flex-row justify-between z-50 fixed backdrop-blur-sm  rounded-lg gap-[36rem] p-5">
+    <header>
+      <Logo />
+      <div className="sm:hidden flex flex-row justify-between z-50 fixed backdrop-blur-sm  rounded-lg gap-[32rem] p-3">
         <div>
           <Link href="/">
-            <div className="flex items-center justify-between">
-              <h1 className=" text-3xl  text-sky font-semibold font-Soul">
-                JK
+            <div className="flex flex-col items-center justify-start">
+              <h1 className=" text-xl  text-sky capitalize font-bold font-mono">
+                Jamil khan
               </h1>
+              <span className="text-xs tracking-widest font-light font-mono">
+                Digital Garden
+              </span>
             </div>
           </Link>
         </div>

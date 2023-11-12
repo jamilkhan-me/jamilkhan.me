@@ -4,7 +4,7 @@ import { getCategories, getPosts } from "@/services";
 
 function Blog({ posts, categories }) {
   return (
-    <div className="my-48 ">
+    <div className="my-48 sm:my-20">
       <h1 className="text-4xl font-bold mb-3 sm:flex sm:justify-center">
         Latest Posts
       </h1>
