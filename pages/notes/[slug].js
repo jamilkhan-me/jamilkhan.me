@@ -15,6 +15,7 @@ import {
   LinkedinShareButton,
   LinkedinIcon,
 } from "next-share";
+import moment from "moment";
 
 function Note({ note }) {
   const [count, setCount] = useState(1);
@@ -33,7 +34,8 @@ function Note({ note }) {
           <div className="flex flex-row justify-between gap-5 my-5 border-y-2 py-2">
             <div className="flex flex-row gap-8 sm:gap-2 text-sm">
               <h1 className="flex flex-row gap-3 font-md text-gray-600">
-                <LuCalendarDays size={20} /> Nov 04, 2023
+                <LuCalendarDays size={20} />{" "}
+                {moment(note.createdAt).format("MMMM DD, YYYY")}
               </h1>
               <h1 className="flex flex-row gap-3 font-md text-gray-600">
                 <MdOutlineTimer size={20} /> 3 min read
@@ -73,7 +75,7 @@ function Note({ note }) {
           </div>
           <div className="py-10">
             <h1 className="font-bold pb-3 uppercase">Date read</h1>
-            <li>November 05, 2023</li>
+            <li>{moment(note.createdAt).format("MMMM DD, YYYY")}</li>
           </div>
           <div className="py-10">
             <h1 className="font-bold pb-3 uppercase">Share</h1>

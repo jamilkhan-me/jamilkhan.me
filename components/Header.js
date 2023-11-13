@@ -3,9 +3,7 @@ import Link from "next/link";
 import headerNavLinks from "@/data/headerNavLinks";
 import MobileNav from "./MobileNav";
 import Logo from "./Logo";
-
 // import ThemeSwitch from "./ThemeSwitch";
-
 // import SearchButton from "./SearchButton";
 
 function Header() {

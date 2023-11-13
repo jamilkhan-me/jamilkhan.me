@@ -60,7 +60,7 @@ export const getNavLinks = async () => {
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
-      posts {
+      posts(orderBy: publishedAt_DESC) {
         title
         tag
         publishedDate

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LuCalendarDays } from "react-icons/lu";
 import { MdOutlineTimer } from "react-icons/md";
+import moment from "moment";
 function BlogCard({ blog }) {
   return (
     <Link href={`/blog/${blog.slug}`}>
@@ -8,7 +9,8 @@ function BlogCard({ blog }) {
         <h1 className="text-2xl font-bold capitalize my-3">{blog.title}</h1>
         <div className="flex flex-row gap-10 mb-3">
           <h1 className="flex flex-row gap-3 font-md text-gray-600">
-            <LuCalendarDays size={23} /> {blog.publishedDate}
+            <LuCalendarDays size={23} />
+            {moment(blog.createdAt).format("MMM DD, YYYY")}
           </h1>
           <h1 className="flex flex-row gap-3 font-md text-gray-600">
             <MdOutlineTimer size={23} /> 3 min read
