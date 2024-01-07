@@ -10,72 +10,96 @@ import {
 } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import Link from "next/link";
+import socialMedialinks from "@/data/socialMedialinks";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import skills from "@/data/skills";
+import SkillCard from "@/components/SkillCard";
+import education from "@/data/education";
+import EducationCard from "@/components/EducationCard";
 
 function About({ about }) {
   return (
-    <div className="flex flex-row sm:flex-col-reverse justify-between gap-10 mx-10 mt-48 sm:mt-20">
-      <div className="w-2/3 sm:w-full">
-        <div className="prose">
-          {about.map((abot) => (
-            <RichText key={abot.details} content={abot.details.raw} />
+    <div className="w-full h-full">
+      <div className="mt-52 flex flex-col items-center">
+        <h1 className="text-8xl font-extrabold">Hello 👋 I'm Jamil Khan</h1>
+        <h1 className="text-8xl font-extrabold pt-4">I build digital stuff</h1>
+        <p className="text-4xl font-semibold w-[60rem] pt-10">
+          I'm passionate about my work because I believe that good design can
+          make a real difference in the world — It can help businesses attract
+          new customers, build stronger relationships, and create a more
+          positive brand image. I love the challenge of taking someone's vision
+          and turning it into a reality.
+        </p>
+        <div className="pt-10">
+          {socialMedialinks.map((link) => (
+            <button
+              className="py-1 px-2 border-2 border-black mr-4 rounded-2xl transition duration-500 hover:bg-black hover:text-white"
+              key={link.name}
+            >
+              <Link target="_blank" href={link.link}>
+                {link.name}
+              </Link>
+            </button>
           ))}
         </div>
       </div>
-      <div className="w-1/3 sm:w-full flex flex-col">
-        <div>
+      <div className="h-full flex flex-row gap-5 border-t-2 my-20">
+        <div className="w-1/2 py-32">
+          <h1 className="text-2xl font-semibold flex flex-row">
+            About me
+            <span className="text-4xl">
+              <IoIosArrowRoundForward />
+            </span>
+          </h1>
+          <h1 className="text-7xl font-semibold leading-tight pt-4">
+            Bridging Innovation with Technology Solutions
+          </h1>
+          <p className="text-3xl font-semibold ">
+            I believe that good design can make a real difference in the world.
+            It can help businesses attract new customers, build stronger
+            relationships, and create a more positive brand image.
+          </p>
+        </div>
+        <div className="w-1/2 py-32 flex flex-col items-center  overflow-hidden bg-cover bg-no-repeat">
           <Image
-            className="w-72 h-96 border-4 p-5"
-            src="/static/aboutMe.jpg"
-            alt="Jamil Khan"
-            width={500}
-            height={500}
+            className="rounded-2xl shadow-2xl transition duration-300 ease-in-out hover:scale-110"
+            src="/profileimg.jpg"
+            alt="profile"
+            width={400}
+            height={600}
           />
         </div>
-        <div className="sm:hidden w-72 rounded-lg flex flex-col gap-5 mt-5 p-5 border-4">
-          <Link
-            href="/static/Resume.pdf"
-            target="_blank"
-            download="Jamil khan Resume"
-            className="flex flex-row gap-4 text-xl font-semibold hover:text-blue-600"
-          >
-            Resume <FaCloudDownloadAlt size={27} />
-          </Link>
-          <h1>Follow me on</h1>
-          <Link
-            href="https://www.linkedin.com/in/jamilkhan-nu/"
-            target="_blank"
-            className="flex flex-row gap-2 hover:text-blue-600"
-          >
-            <FaLinkedin size={27} /> /in/jamilkhan
-          </Link>
-          <Link
-            href="https://twitter.com/JamilkhanInfo"
-            target="_blank"
-            className="flex flex-row gap-2 hover:text-blue-600"
-          >
-            <RiTwitterXLine size={27} /> @jamillkhan
-          </Link>
-          <Link
-            href="https://github.com/JamilKhan-nu"
-            target="_blank"
-            className="flex flex-row gap-2 hover:text-blue-600"
-          >
-            <FaGithubSquare size={27} /> @jamilkhan
-          </Link>
-          <Link
-            href="/"
-            target="_blank"
-            className="flex flex-row gap-2 hover:text-blue-600"
-          >
-            <FaFacebookSquare size={27} /> @jamilkhan
-          </Link>
-          <Link
-            href="/"
-            target="_blank"
-            className="flex flex-row gap-2 hover:text-blue-600"
-          >
-            <FaInstagramSquare size={27} /> @jamillkhan
-          </Link>
+      </div>
+      <div className="h-full flex flex-row gap-5 border-t-2 my-20">
+        <div className="w-1/3 py-40">
+          <h1 className="text-6xl font-semibold flex flex-row">
+            Skils
+            <span className="text-6xl">
+              <IoIosArrowRoundForward />
+            </span>
+          </h1>
+        </div>
+        <div className="w-2/3 py-32 grid grid-cols-4 gap-2">
+          {skills.map((skill) => (
+            <SkillCard key={skill.name} skill={skill} />
+          ))}
+        </div>
+      </div>
+      <div className="h-full flex flex-row gap-5 border-t-2 my-20">
+        <div className="w-1/3 py-32">
+          <h1 className="text-6xl font-semibold flex flex-row">
+            Education
+            <span className="text-6xl">
+              <IoIosArrowRoundForward />
+            </span>
+          </h1>
+        </div>
+        <div className="w-2/3 py-32">
+          <div className="w-full">
+            {education.map((list) => (
+              <EducationCard key={list.title} list={list} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

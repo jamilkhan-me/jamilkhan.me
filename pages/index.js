@@ -208,53 +208,33 @@ export default function Home({
             </Link>
           </div>
         </div>
-        {/* <div className="flex flex-row sm:flex-col justify-between gap-5">
-          <div className="w-2/3 sm:w-96 h-auto flex flex-col justify-start gap-5">
-            <div className="mb-5 ">
-              <h1 className="text-4xl font-bold flex sm:justify-center">
-                Popular <span className="highlight">Posts</span>
-              </h1>
-              <p className="my-5 font-semibold tracking-wider flex sm:justify-center">
-                Do not miss the latest trends
-              </p>
-            </div>
-            <div className="flex flex-col gap-8">
-              {featuredPosts.map((post) => (
-                <FeaturedPost key={post.title} post={post} />
+      </section>
+      {/* BOOK NOTES--------------------------------------- */}
+      <section className="w-full h-screen sm:h-auto">
+        <div className="flex flex-row gap-5">
+          <div className="w-1/3">
+            <hr class="mt-4" />
+            <h1 className="text-6xl pt-8">
+              Digital <br /> Bookself
+            </h1>
+          </div>
+          <div className="w-2/3">
+            <h1 className="text-2xl font-semibold">Recent reading list</h1>
+            <div className=" grid grid-cols-4 gap-2">
+              {bookNotes.map((book) => (
+                <BookNoteCard key={book.title} book={book} />
               ))}
             </div>
+            <Link
+              className=" mt-8 text-2xl font-semibold flex flex-row items-center cursor-pointer  transition duration-300 hover:translate-x-4"
+              href="/blog"
+            >
+              View all notes
+              <span className="text-4xl">
+                <IoIosArrowRoundForward />
+              </span>
+            </Link>
           </div>
-          <div className="w-1/3 sm:w-96 h-auto border-2 p-4 bg-gray-200 rounded-xl">
-            <div className="flex flex-row justify-between mb-5">
-              <h1 className="text-2xl font-bold border-b-4 border-yellow-500">
-                Recent posts
-              </h1>
-              <Link
-                className="border-2 px-2 py-1 rounded-lg bg-gray-100  hover:border-gray-600"
-                href="/blog"
-              >
-                View all
-              </Link>
-            </div>
-            {posts.map((post) => (
-              <RecentPost key={post.title} post={post} />
-            ))}
-          </div>
-        </div> */}
-      </section>
-      <section className="w-full h-screen sm:h-auto">
-        <h1 className="flex justify-center text-4xl font-bold mb-8">
-          My <span className="highlight">Digital BookSelf</span>
-        </h1>
-        <div className="flex flex-row sm:flex-col justify-between flex-wrap gap-5">
-          {bookNotes.map((book) => (
-            <BookNoteCard key={book.title} book={book} />
-          ))}
-        </div>
-        <div className="flex justify-center my-10">
-          <Link href="/notes">
-            <RoundButton>View More Notes</RoundButton>
-          </Link>
         </div>
       </section>
     </div>

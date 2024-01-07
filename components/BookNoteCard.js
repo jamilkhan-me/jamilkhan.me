@@ -3,22 +3,17 @@ import Link from "next/link";
 
 function BookNoteCard({ book }) {
   return (
-    <Link href={`/notes/${book.slug}`}>
-      <div className="w-60 sm:mx-20 h-auto pb-4 border-2 rounded-xl shadow-lg hover:boxShadow cursor-pointer">
-        <Image
-          src={book.bookCover.url}
-          alt={book.title}
-          className="h-72 w-48 mx-5 my-4 rounded-xl"
-          width={500}
-          height={800}
-        />
-        <h1 className="text-lg font-bold flex justify-center m-3">
-          {book.title}
-        </h1>
-        <h2 className="text-lg font-light flex justify-center">
-          {book.author}
-        </h2>
-      </div>
+    <Link
+      className="my-8 relative max-w-xs overflow-hidden bg-cover bg-no-repeat"
+      href={`/notes/${book.slug}`}
+    >
+      <Image
+        src={book.bookCover.url}
+        alt={book.title}
+        className="w-40 h-60 max-w-xs transition duration-300 ease-in-out hover:scale-110"
+        width={100}
+        height={150}
+      />
     </Link>
   );
 }
