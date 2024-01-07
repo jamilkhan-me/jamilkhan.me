@@ -1,28 +1,20 @@
-import Image from "next/image";
 import Link from "next/link";
+import { MdOutlineDateRange } from "react-icons/md";
+import { RiTimerLine } from "react-icons/ri";
 
 function RecentPost({ post }) {
   return (
-    <div className="flex flex-row justify-start gap-4 my-4">
-      <div className="w-[64px] h-[64px]">
-        <Image
-          src={post.featuredImage.url}
-          alt="post image"
-          className=" w-[64px] h-[50px] rounded-full  object-cover"
-          width={100}
-          height={100}
-        />
-      </div>
-      <div className=" w-96 flex flex-col justify-center ">
-        <Link href={`/blog/${post.slug}`}>
-          <h1 className="text-md font-bold underlines">{post.title}</h1>
-        </Link>
-
-        <div className="flex flex-row justify-between  mt-3 font-light text-gray-500">
-          <p>3 mins read</p>
+    <div className=" cursor-pointer  hover:skew-x-6 gap-4 my-8">
+      <Link href={`/blog/${post.slug}`}>
+        <h1 className="text-4xl">{post.title}</h1>
+        <div className="flex flex-row gap-3 items-center my-3">
+          <MdOutlineDateRange />
           <p>{post.publishedDate}</p>
+          <RiTimerLine />
+          <p>3 mins read</p>
         </div>
-      </div>
+        <hr />
+      </Link>
     </div>
   );
 }

@@ -1,35 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithubSquare, FaExternalLinkAlt } from "react-icons/fa";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 function ProjectCard({ project }) {
   return (
-    <div className="w-1/2 h-80 sm:w-96 sm:h-96">
-      <div className="projectCard hover:boxShadow">
+    <div className="cursor-pointer transition duration-200 ease-out hover:skew-x-2 w-1/2 h-96 sm:w-96 sm:h-96">
+      <div className=" hover:boxShadow">
         <Image
           src={project.projectImage.url}
           alt={project.title}
-          className="w-full h-80 rounded-lg"
+          className="w-full h-80 rounded-xl"
           width={500}
           height={400}
         />
 
-        <h1 className=" flex justify-center py-2 text-xl font-semibold">
-          {project.title}
-        </h1>
-        <p className="flex justify-center capitalize">{project.description}</p>
-
-        <div className="flex flex-row justify-between mt-3">
-          <p className="font-semibold">{project.tag}</p>
-          <div className="flex flex-row gap-2">
-            <Link href={project.github}>
-              <FaGithubSquare size={28} />
-            </Link>
-            <Link href={project.preview}>
-              <FaExternalLinkAlt size={25} />
-            </Link>
-          </div>
+        <div className="flex flex-row mt-3 ">
+          <h1 className="text-2xl font-semibold ">{project.title}</h1>
+          <span className="text-4xl font-semibold flex items-center">
+            <IoIosArrowRoundForward />
+          </span>
         </div>
+        <h2 className="text-xl">{project.description}</h2>
       </div>
     </div>
   );

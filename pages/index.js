@@ -6,8 +6,10 @@ import {
   getPosts,
   getProjects,
 } from "@/services";
+import { IoIosArrowRoundForward } from "react-icons/io";
 import { SiJamboard } from "react-icons/si";
 import { MdOutlineWork } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import { RiTwitterXLine } from "react-icons/ri";
 import {
   FaLinkedin,
@@ -37,15 +39,14 @@ export default function Home({
 }) {
   return (
     <div className="flex flex-col justify-between gap-40">
-      <section className=" flex flex-row justify-between mt-40 gap-14 sm:flex-col-reverse ">
+      <section className="h-full flex flex-row justify-between mt-40 gap-14 sm:flex-col-reverse ">
         <div className=" w-2/3 h-auto flex flex-col justify-center sm:w-[26rem]">
-          <h1 className="text-6xl font-bold tracking-wider sm:text-4xl sm:text-center ">
-            Molding Ideas into Reality with the Art of
-            <span className=" highlight">CODE</span>
-            and
+          <h1 className="text-8xl font-bold tracking-wider sm:text-4xl sm:text-center ">
+            Molding Ideas into Reality with the Art of <br />
+            <span className=" highlight">CODE</span>&
             <span className="highlight">DESIGN</span>
           </h1>
-          <p className="pt-8 text-xl sm:text-center sm:mx-1">
+          <p className="pt-20 text-xl sm:text-center sm:mx-1">
             As a proficient full-stack developer, I specialize in bringing
             concepts to life through cutting-edge web applications. Dive into my
             recent projects and writings to see my mastery in React.js and web
@@ -58,7 +59,12 @@ export default function Home({
               download="Jamil khan resume"
               target="_blank"
             >
-              <button type="button">Download CV</button>
+              <button className="text-lg" type="button">
+                Download CV
+              </button>
+              <span className="text-4xl">
+                <IoIosArrowRoundForward />
+              </span>
             </Link>
           </div>
         </div>
@@ -151,35 +157,58 @@ export default function Home({
           </div>
         </div>
       </section>
-      <section className="w-full h-screen sm:h-auto my-20 gap-14">
-        <div>
-          <h1 className="flex justify-center  text-4xl font-bold my-10">
-            <span className="highlight ">Portfolio</span> section
-          </h1>
-          <div className="flex flex-col justify-between gap-10 sm:gap-0 ">
-            <div className="flex flex-row sm:flex-col sm:gap-32 justify-between w-full h-auto object-cover mb-60 sm:mb-40">
-              {projects.map((project) => (
-                <ProjectCard key={project.title} project={project} />
-              ))}
-            </div>
-            <div className=" w-full h-50 flex flex-row sm:flex-col justify-start gap-5">
-              {featuredProjects.map((featuredProjects) => (
-                <FeaturedProjects
-                  key={featuredProjects.title}
-                  featuredProjects={featuredProjects}
-                />
-              ))}
-            </div>
+      {/* RECENT WORKS--------------------------------------- */}
+      <section className="w-full h-full sm:h-auto my-16 gap-14">
+        <div className="flex flex-row justify-between w-full border-t-2 border-black pt-8">
+          <h1 className="text-4xl font-semibold my-10 ">My Work</h1>
+          <Link
+            href="/projects"
+            className="flex transition duration-300 hover:translate-x-4 flex-row my-10"
+          >
+            <h2 className="text-xl mr-2">View more</h2>
+            <span className="text-2xl">
+              <MdArrowOutward />
+            </span>
+          </Link>
+        </div>
+        <div className="w-full h-full">
+          {featuredProjects.map((featuredProjects) => (
+            <FeaturedProjects
+              key={featuredProjects.title}
+              featuredProjects={featuredProjects}
+            />
+          ))}
+        </div>
+        <div className="flex flex-row my-10 gap-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </section>
+      {/* RECENT BLOGS--------------------------------------------------- */}
+      <section className="w-full h-auto  sm:my-10 gap-14">
+        <div className="flex flex-row gap-5">
+          <div className="w-1/3">
+            <hr class="mt-4" />
+            <h1 className="text-6xl pt-8">Writing</h1>
           </div>
-          <div className="flex justify-center mt-5">
-            <Link href="/projects">
-              <RoundButton>View More Projects</RoundButton>
+          <div className="2/3">
+            <h1 className="text-2xl font-semibold">Recent blogs</h1>
+            {posts.map((post) => (
+              <RecentPost key={post.title} post={post} />
+            ))}
+            <Link
+              className="text-2xl font-semibold flex flex-row items-center cursor-pointer  transition duration-300 hover:translate-x-4"
+              href="/blog"
+            >
+              View all writing
+              <span className="text-4xl">
+                <IoIosArrowRoundForward />
+              </span>
             </Link>
           </div>
         </div>
-      </section>
-      <section className="w-full h-auto my-32 sm:my-10 gap-14">
-        <div className="flex flex-row sm:flex-col justify-between gap-5">
+        {/* <div className="flex flex-row sm:flex-col justify-between gap-5">
           <div className="w-2/3 sm:w-96 h-auto flex flex-col justify-start gap-5">
             <div className="mb-5 ">
               <h1 className="text-4xl font-bold flex sm:justify-center">
@@ -211,7 +240,7 @@ export default function Home({
               <RecentPost key={post.title} post={post} />
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
       <section className="w-full h-screen sm:h-auto">
         <h1 className="flex justify-center text-4xl font-bold mb-8">

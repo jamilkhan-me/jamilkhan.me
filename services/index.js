@@ -25,7 +25,7 @@ export const getProjects = async () => {
 export const getFeaturedProjects = async () => {
   const query = gql`
     query MyQuery {
-      featuredProjects {
+      featuredProjects(skip: 2) {
         title
         slug
         tag

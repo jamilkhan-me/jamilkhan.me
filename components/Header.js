@@ -8,9 +8,8 @@ import Logo from "./Logo";
 
 function Header() {
   return (
-    <header>
-      <Logo />
-      <div className="sm:hidden flex flex-row justify-between z-50 fixed backdrop-blur-sm  rounded-lg gap-[32rem] p-3">
+    <header className="">
+      <div className="sm:hidden flex flex-row justify-between z-50 fixed backdrop-blur-sm  rounded-lg gap-[39rem] p-3">
         <div>
           <Link href="/">
             <div className="flex flex-col items-center justify-start">
