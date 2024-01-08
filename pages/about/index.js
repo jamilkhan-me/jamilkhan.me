@@ -15,7 +15,9 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import skills from "@/data/skills";
 import SkillCard from "@/components/SkillCard";
 import education from "@/data/education";
+import whyChooseMe from "@/data/whyChooseMe";
 import EducationCard from "@/components/EducationCard";
+import WhyChooseMeCard from "@/components/WhyChooseMeCard";
 
 function About({ about }) {
   return (
@@ -98,6 +100,23 @@ function About({ about }) {
           <div className="w-full">
             {education.map((list) => (
               <EducationCard key={list.title} list={list} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="h-full flex flex-row gap-5 border-t-2 mt-20">
+        <div className="w-1/3 pt-20">
+          <h1 className="text-5xl font-semibold flex flex-row">
+            Why choose me
+            <span className="text-6xl flex items-center">
+              <IoIosArrowRoundForward />
+            </span>
+          </h1>
+        </div>
+        <div className="w-2/3 pt-20">
+          <div className="w-full grid grid-cols-2 gap-10">
+            {whyChooseMe.map((list) => (
+              <WhyChooseMeCard key={list.title} list={list} />
             ))}
           </div>
         </div>

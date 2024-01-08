@@ -2,7 +2,7 @@ import React from "react";
 
 const EducationCard = ({ list }) => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full transition duration-300 hover:scale-105">
       <h1 className="text-xl">{list.session}</h1>
       <h1 className="text-3xl font-semibold py-3">{list.title}</h1>
       <h1 className="text-xl font-semibold pb-2">{list.university}</h1>
