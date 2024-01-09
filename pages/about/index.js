@@ -26,9 +26,9 @@ function About({ about }) {
         <h1 className="text-8xl font-extrabold">Hello 👋 I&aposm Jamil Khan</h1>
         <h1 className="text-8xl font-extrabold pt-4">I build digital stuff</h1>
         <p className="text-4xl font-semibold w-[60rem] pt-10">
-          I'm passionate about my work because I believe that good design can
-          make a real difference in the world — It can help businesses attract
-          new customers, build stronger relationships, and create a more
+          I&aposm passionate about my work because I believe that good design
+          can make a real difference in the world — It can help businesses
+          attract new customers, build stronger relationships, and create a more
           positive brand image. I love the challenge of taking someone&aposs
           vision and turning it into a reality.
         </p>
