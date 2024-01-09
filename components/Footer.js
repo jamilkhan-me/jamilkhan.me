@@ -13,10 +13,10 @@ function Footer() {
     <footer className="h-full border-t-2 py-16">
       <div className="flex flex-col gap-40">
         <div className="flex flex-col items-center">
-          <h1 className="text-9xl font-bold">Let&aposs Talk</h1>
+          <h1 className="text-9xl font-bold">Let&apos;s Talk</h1>
           <h3 className="text-4xl font-semibold w-[60rem] pt-8">
             Good design and development can make a real difference in the world.
-            I love the challenge of taking someone&aposs vision and turning it
+            I love the challenge of taking someone&apos;s vision and turning it
             into a reality.
           </h3>
         </div>
