@@ -17,9 +17,7 @@ function Blog({ posts, categories }) {
         </div>
         <div className="w-1/4 sm:w-full border-2 mt-7 p-5 h-auto bg-slate-100 rounded-lg">
           <h1 className="text-xl font-semibold uppercase mb-7">CATEGORIES</h1>
-          {categories.map((category) => (
-            <Category key={category.name} category={category} />
-          ))}
+          Categories
         </div>
       </div>
     </div>
