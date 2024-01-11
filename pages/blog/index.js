@@ -8,6 +8,7 @@ function Blog({ posts, categories }) {
       <h1 className="text-4xl font-bold mb-3 sm:flex sm:justify-center">
         Latest Posts
       </h1>
+      <p>My motto is : Write everyday</p>
       <hr />
       <div className="flex flex-row sm:flex-col justify-between gap-5">
         <div className="w-3/4 sm:w-full">
