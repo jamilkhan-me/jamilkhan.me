@@ -4,9 +4,9 @@ import { RiTimerLine } from "react-icons/ri";
 
 function RecentPost({ post }) {
   return (
-    <div className=" cursor-pointer  hover:skew-x-6 gap-4 my-8">
+    <div className=" cursor-pointer hover:skew-x-6 gap-4 my-8">
       <Link href={`/blog/${post.slug}`}>
-        <h1 className="text-4xl">{post.title}</h1>
+        <h1 className="text-4xl hover:underlines">{post.title}</h1>
         <div className="flex flex-row gap-3 items-center my-3">
           <MdOutlineDateRange />
           <p>{post.publishedDate}</p>

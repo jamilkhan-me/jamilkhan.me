@@ -4,7 +4,7 @@ import Link from "next/link";
 function BookHeading() {
   return (
     <div className="flex flex-row sm:flex-col justify-between">
-      <div className="w-1/2 sm:w-full mx-20 sm:mx-2 ">
+      <div className="w-1/2 sm:w-[35rem] mx-20 sm:mx-2 ">
         <h1 className="text-2xl font-bold">Welcome to my</h1>
         <h1 className="text-6xl font-bold mb-5 text-yellow-500 ">
           Digital Bookself

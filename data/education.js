@@ -1,6 +1,6 @@
 const education = [
   {
-    title: "PhD in Computer Science (Continue)",
+    title: "MPhil in Computer Science (Continue)",
     university: "The University of Westminster",
     session: "2020 - 2024",
   },

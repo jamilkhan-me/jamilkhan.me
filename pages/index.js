@@ -29,6 +29,7 @@ import FeaturedPost from "@/components/FeaturedPost";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import BookNoteCard from "@/components/BookNoteCard";
 import RoundButton from "@/components/RoundButton";
+import FeatureProject from "@/components/FeatureProject";
 
 export default function Home({
   posts,
@@ -40,13 +41,13 @@ export default function Home({
   return (
     <div className="flex flex-col justify-between gap-40">
       <section className="h-full flex flex-row justify-between mt-40 gap-14 sm:flex-col-reverse ">
-        <div className=" w-2/3 h-auto flex flex-col justify-center sm:w-[26rem]">
-          <h1 className="text-8xl font-bold tracking-wider sm:text-4xl sm:text-center ">
+        <div className=" w-2/3 h-auto flex flex-col justify-center sm:w-full ">
+          <h1 className="text-8xl font-bold tracking-wider sm:text-6xl  sm:text-center ">
             Molding Ideas into Reality with the Art of <br />
             <span className=" highlight">CODE</span>&
             <span className="highlight">DESIGN</span>
           </h1>
-          <p className="pt-20 text-xl sm:text-center sm:mx-1">
+          <p className="pt-20 text-2xl font-medium sm:text-justify sm:mx-1">
             As a proficient full-stack developer, I specialize in bringing
             concepts to life through cutting-edge web applications. Dive into my
             recent projects and writings to see my mastery in React.js and web
@@ -68,8 +69,8 @@ export default function Home({
             </Link>
           </div>
         </div>
-        <div className="w-1/3">
-          <div className="bg-transparent cursor-pointer group perspective flex flex-col sm:mx-16 w-72 h-[29rem] rounded-xl drop-shadow-lg shadow-gray-900">
+        <div className="w-1/3 sm:mx-40">
+          <div className="bg-transparent cursor-pointer group perspective flex flex-col w-72 h-[29rem] rounded-xl drop-shadow-lg shadow-gray-900">
             <div className="rounded-xl relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
               <div className=" absolute backface-hidden  w-full h-full">
                 <div className="h-1/2 bg-blue-400 rounded-t-lg flex flex-col justify-center ">
@@ -158,9 +159,11 @@ export default function Home({
         </div>
       </section>
       {/* RECENT WORKS--------------------------------------- */}
-      <section className="w-full h-full sm:h-auto my-16 gap-14">
+      <section className="w-full sm:w-[38rem] h-full sm:h-auto my-16 gap-14">
         <div className="flex flex-row justify-between w-full border-t-2 border-black pt-8">
-          <h1 className="text-4xl font-semibold my-10 ">My Work</h1>
+          <h1 className="text-4xl font-semibold my-10 sm:flex sm:items-center">
+            My Work
+          </h1>
           <Link
             href="/projects"
             className="flex transition duration-300 hover:translate-x-4 flex-row my-10"
@@ -171,23 +174,20 @@ export default function Home({
             </span>
           </Link>
         </div>
-        <div className="w-full h-full">
-          {featuredProjects.map((featuredProjects) => (
-            <FeaturedProjects
-              key={featuredProjects.title}
-              featuredProjects={featuredProjects}
-            />
+        <div className="w-full h-[28rem]">
+          {featuredProjects.map((project) => (
+            <FeatureProject key={project.title} project={project} />
           ))}
         </div>
-        <div className="flex flex-row my-10 gap-8">
+        <div className="flex  sm:flex-col flex-row my-10 gap-8">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </section>
       {/* RECENT BLOGS--------------------------------------------------- */}
-      <section className="w-full h-auto  sm:my-10 gap-14">
-        <div className="flex flex-row gap-5">
+      <section className="w-full h-auto sm:w-[38rem] sm:mx-10 sm:my-10 gap-14">
+        <div className="flex flex-row sm:flex-col gap-5">
           <div className="w-1/3">
             <hr class="mt-4" />
             <h1 className="text-6xl pt-8">Writing</h1>
@@ -210,17 +210,17 @@ export default function Home({
         </div>
       </section>
       {/* BOOK NOTES--------------------------------------- */}
-      <section className="w-full h-screen sm:h-auto">
-        <div className="flex flex-row gap-5">
-          <div className="w-1/3">
+      <section className="w-full sm:w-[38rem] h-screen sm:h-auto sm:mx-10">
+        <div className="flex flex-row sm:flex-col  gap-5">
+          <div className="w-1/3 sm:w-full">
             <hr class="mt-4" />
             <h1 className="text-6xl pt-8">
               Digital <br /> Bookself
             </h1>
           </div>
-          <div className="w-2/3">
+          <div className="w-2/3 sm:w-full">
             <h1 className="text-2xl font-semibold">Recent reading list</h1>
-            <div className=" grid grid-cols-4 gap-2">
+            <div className=" grid grid-cols-4 sm:grid-cols-3 gap-2">
               {bookNotes.map((book) => (
                 <BookNoteCard key={book.title} book={book} />
               ))}

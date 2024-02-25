@@ -1,28 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IoIosArrowRoundForward } from "react-icons/io";
 
 function ProjectCard({ project }) {
   return (
-    <div className="cursor-pointer transition duration-200 ease-out hover:skew-x-2 w-1/2 h-96 sm:w-96 sm:h-96">
-      <div className=" hover:boxShadow">
-        <Image
-          src={project.projectImage.url}
-          alt={project.title}
-          className="w-full h-80 rounded-xl"
-          width={500}
-          height={400}
-        />
+    <Link
+      href={project.preview}
+      target="_blank"
+      className="cursor-pointer transition duration-200 ease-out hover:skew-x-2 w-1/2 h-auto sm:w-full"
+    >
+      <Image
+        src={project.projectImage.url}
+        alt={project.title}
+        className="w-full h-80 rounded-xl border-2 "
+        width={500}
+        height={400}
+      />
 
-        <div className="flex flex-row mt-3 ">
-          <h1 className="text-2xl font-semibold ">{project.title}</h1>
-          <span className="text-4xl font-semibold flex items-center">
-            <IoIosArrowRoundForward />
-          </span>
-        </div>
-        <h2 className="text-xl">{project.description}</h2>
+      <div className="flex flex-col mt-3 ">
+        <h1 className="text-3xl font-extrabold uppercase mb-3 ">
+          {project.title}
+        </h1>
+        <h2 className="text-xl font-medium">{project.description}</h2>
       </div>
-    </div>
+    </Link>
   );
 }
 

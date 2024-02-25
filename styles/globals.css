@@ -80,4 +80,7 @@
   .underlines {
     @apply hover:text-blue-500 hover:underline;
   }
+  .scaleRound {
+    @apply hover:scale-110 hover:rounded-lg;
+  }
 }

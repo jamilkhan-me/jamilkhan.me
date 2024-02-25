@@ -14,12 +14,10 @@ export default function Projects({ projects }) {
             Things I have built to showcase my skills
           </p>
         </div>
-        <div className="container py-12">
-          <div className="-m-4 flex flex-wrap sm:gap-5">
-            {projects.map((project) => (
-              <Card key={project.title} project={project} />
-            ))}
-          </div>
+        <div className="flex flex-row sm:flex-col justify-center gap-10 ">
+          {projects.map((project) => (
+            <Card key={project.title} project={project} />
+          ))}
         </div>
       </div>
     </>

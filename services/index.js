@@ -25,16 +25,16 @@ export const getProjects = async () => {
 export const getFeaturedProjects = async () => {
   const query = gql`
     query MyQuery {
-      featuredProjects(skip: 2) {
+      featuredProjects(skip: 1, orderBy: publishedAt_DESC) {
         title
         slug
         tag
         previewLink
         githubLink
-        description
         projectImage {
           url
         }
+        description
       }
     }
   `;
