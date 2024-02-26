@@ -21,11 +21,30 @@ export const getProjects = async () => {
 
   return result.projects;
 };
+export const getAllProjects = async () => {
+  const query = gql`
+    query MyQuery {
+      projects {
+        description
+        title
+        tag
+        github
+        preview
+        projectImage {
+          url
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+
+  return result.projects;
+};
 
 export const getFeaturedProjects = async () => {
   const query = gql`
     query MyQuery {
-      featuredProjects(skip: 1, orderBy: publishedAt_DESC) {
+      featuredProjects {
         title
         slug
         tag

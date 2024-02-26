@@ -55,7 +55,7 @@ function About({ about }) {
       <div className="h-full flex flex-row sm:flex-col gap-5 border-t-2 my-20 sm:my-1">
         <div className="w-1/3 py-40 sm:pb-2">
           <h1 className="text-6xl font-semibold flex flex-row ">
-            Skils
+            Skills
             <span className="text-6xl">
               <IoIosArrowRoundForward />
             </span>
@@ -102,7 +102,7 @@ function About({ about }) {
         </div>
       </div>
       <div className="h-full flex flex-col sm:flex-col gap-5 border-t-2 mt-20 pt-20">
-        <h1 className="text-5xl font-semibold flex justify-center mb-5 uppercase">
+        <h1 className="text-5xl font-semibold flex justify-center mb-5">
           Little Gallary
         </h1>
         <div className="h-full flex flex-row sm:items-center sm:flex-col gap-8">

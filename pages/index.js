@@ -55,12 +55,12 @@ export default function Home({
           </p>
           <div className="flex flex-row sm:justify-center mt-5">
             <Link
-              className="button"
+              className="button "
               href="/static/Resume.pdf"
               download="Jamil khan resume"
               target="_blank"
             >
-              <button className="text-lg" type="button">
+              <button className="text-lg " type="button">
                 Download CV
               </button>
               <span className="text-4xl">
@@ -179,7 +179,7 @@ export default function Home({
             <FeatureProject key={project.title} project={project} />
           ))}
         </div>
-        <div className="flex  sm:flex-col flex-row my-10 gap-8">
+        <div className="grid grid-cols-3 sm:grid-cols-1 gap-10">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}

@@ -18,9 +18,9 @@ const FeatureProject = ({ project }) => {
           />
         </Link>
       </div>
-      <div className="w-1/3 sm:w-full flex flex-col  mt-16 sm:mt-2 ">
+      <div className="w-1/3 sm:w-full flex flex-col ml-5 mt-16 sm:mt-2 ">
         <h1 className="flex justify-end  text-xl sm:hidden">Feature Project</h1>
-        <h1 className="flex justify-end sm:justify-start text-4xl sm:text-3xl font-extrabold uppercase my-3">
+        <h1 className="flex justify-end sm:justify-start text-3xl sm:text-3xl font-bold  my-3">
           {project.title}
         </h1>
         <p className="flex justify-end sm:justify-start items-end text-xl text-right font-medium ">

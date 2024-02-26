@@ -5,28 +5,50 @@ import { FiGithub } from "react-icons/fi";
 
 function Card({ project }) {
   return (
-    <div className=" my-8 flex flex-col sm:w-[35rem] ">
-      <Image
-        src={project.projectImage.url}
-        alt={project.title}
-        className="border-2 w-[38rem] sm:w-auto h-96 rounded-2xl"
-        width={800}
-        height={600}
-      />
-      <div className="flex flex-row justify-between my-4 ">
-        <h1 className="text-3xl font-bold uppercase ">{project.title}</h1>
-        <span className="flex flex-row gap-3 mt-1">
-          <Link href={project.preview} target="_blank">
-            <BiLinkExternal size={28} />
-          </Link>
-          <Link href={project.github} target="_blank">
-            <FiGithub size={28} />
-          </Link>
-        </span>
-      </div>
-      <h1 className="text-xl font-semibold">{project.description}</h1>
-
-      <h1 className="font-semibold mt-3">Built with {project.tag} </h1>
+    <div>
+      <Link
+        href={project.preview}
+        target="_blank"
+        className="flex flex-col bg-slate-100 rounded-t-2xl sm:w-[35rem]  my-8 overflow-hidden bg-cover bg-no-repeat "
+      >
+        <Image
+          src={project.projectImage.url}
+          alt={project.title}
+          className="border-2 w-[38rem] h-64 sm:w-auto rounded-t-2xl transition duration-300 ease-in-out hover:scale-110"
+          width={800}
+          height={600}
+        />
+        <div className=" h-58 my-4 px-5 relative">
+          <div>
+            <h1 className="text-2xl my-3 hover:underlines font-semibold">
+              {project.title}
+            </h1>
+            <hr className="#030712" />
+          </div>
+          <div>
+            <h1 className="text-md my-5 font-light ">{project.description}</h1>
+          </div>
+          <div className="flex flex-row justify-between object-bottom mt-4 ">
+            <h1 className="font-semibold flex  ">{project.tag} </h1>
+            <span className="flex flex-row gap-3 ">
+              <Link
+                className="hover:underlines"
+                href={project.preview}
+                target="_blank"
+              >
+                <BiLinkExternal size={20} />
+              </Link>
+              <Link
+                className="hover:underlines"
+                href={project.github}
+                target="_blank"
+              >
+                <FiGithub size={20} />
+              </Link>
+            </span>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 }

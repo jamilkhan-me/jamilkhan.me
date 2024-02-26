@@ -1,6 +1,6 @@
 import projectsData from "@/data/projectsData";
 import Card from "@/components/Card";
-import { getProjects } from "@/services";
+import { getAllProjects } from "@/services";
 
 export default function Projects({ projects }) {
   return (
@@ -14,7 +14,7 @@ export default function Projects({ projects }) {
             Things I have built to showcase my skills
           </p>
         </div>
-        <div className="flex flex-row sm:flex-col justify-center gap-10 ">
+        <div className="grid grid-cols-3 sm:grid-cols-1 gap-10 ">
           {projects.map((project) => (
             <Card key={project.title} project={project} />
           ))}
@@ -25,7 +25,7 @@ export default function Projects({ projects }) {
 }
 
 export async function getStaticProps() {
-  const projects = await getProjects();
+  const projects = await getAllProjects();
 
   return {
     props: { projects },
