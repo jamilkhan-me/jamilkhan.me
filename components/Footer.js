@@ -1,5 +1,6 @@
 import Link from "next/link";
 import siteMetadata from "@/data/siteMetaData";
+import { FaArrowRightLong } from "react-icons/fa6";
 import {
   FaGithubSquare,
   FaFacebookSquare,
@@ -16,11 +17,17 @@ function Footer() {
         Let Work together
       </h1>
       <div className="flex flex-row gap-8">
-        <div className=" w-1/2 h-32 p-6 bg-n-7 border-t-2 border-n-4 rounded-2xl cursor-pointer duration-500 hover:-translate-y-2">
-          <p className="font-mono">Say hello!</p>
-          <h3 className="font-mono text-2xl font-semibold mt-3">
-            jamilkhan.nu@gmail.com
-          </h3>
+        <div className=" w-1/2 h-32 p-6 bg-n-7 border-t-2 border-n-4 rounded-2xl cursor-pointer group duration-500 hover:-translate-y-2 flex flex-row justify-between">
+          <span>
+            <p className="font-mono">Say hello!</p>
+            <h3 className="font-mono text-2xl font-semibold mt-3">
+              jamilkhan.nu@gmail.com
+            </h3>
+          </span>
+          <FaArrowRightLong
+            size={25}
+            className="mr-5 duration-500 group-hover:-rotate-45"
+          />
         </div>
         <div className="w-1/2 flex flex-row gap-8">
           {socialMedialinks.map((link) => (

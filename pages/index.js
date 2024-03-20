@@ -1,10 +1,4 @@
-import {
-  getBookNotes,
-  getFeaturedPosts,
-  getFeaturedProjects,
-  getPosts,
-  getProjects,
-} from "@/services";
+import { getBookNotes, getPosts, getProjects } from "@/services";
 
 import ProjectCard from "@/components/ProjectCard";
 import RecentPost from "@/components/RecentPost";

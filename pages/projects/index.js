@@ -1,20 +1,27 @@
-import projectsData from "@/data/projectsData";
 import Card from "@/components/Card";
 import { getAllProjects } from "@/services";
 
 export default function Projects({ projects }) {
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700 mt-28 sm:mt-20">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-3xl flex justify-center font-extrabold leading-9 tracking-wide uppercase text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Projects
-          </h1>
-          <p className="text-lg flex justify-center leading-7 text-gray-500 dark:text-gray-400">
-            Things I have built to showcase my skills
-          </p>
-        </div>
-        <div className="grid grid-cols-3 sm:grid-cols-1 gap-10 ">
+      <div className="my-40 w-1/2">
+        <h1 className="text-3xl  font-righteous font-extrabold leading-9 tracking-wide text-n-1 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          Projects.
+        </h1>
+        <p className="text-3xl my-8 leading-[2.5rem] font-mono font-semibold text-n-1">
+          Here are some of my projects from the last few months.
+        </p>
+        <p className="text-lg font-mono  text-n-2">
+          I have had the privilege of working on diverse projects that have
+          allowed me to hone my skills and push boundaries.
+        </p>
+      </div>
+      <div>
+        <h1 className="text-4xl uppercase font-righteous my-8 sm:flex sm:items-center">
+          Recent Works
+        </h1>
+
+        <div className="grid grid-cols-2 sm:grid-cols-1 gap-10">
           {projects.map((project) => (
             <Card key={project.title} project={project} />
           ))}
