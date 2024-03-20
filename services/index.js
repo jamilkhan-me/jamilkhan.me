@@ -5,7 +5,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getProjects = async () => {
   const query = gql`
     query MyQuery {
-      projects(skip: 2) {
+      projects(skip: 1) {
         description
         title
         tag
@@ -126,7 +126,7 @@ export const getFeaturedPosts = async () => {
 export const getBookNotes = async () => {
   const query = gql`
     query MyQuery {
-      books {
+      books(skip: 5) {
         title
         author
         slug

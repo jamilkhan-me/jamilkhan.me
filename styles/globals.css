@@ -1,7 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=My+Soul&family=Rock+Salt&family=Space+Grotesk&family=Waterfall&display=swap");
+
+:root {
+  --font-righteous: "Righteous", sans-serif;
+  --font-space: "Space Mono", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  background: #0e0c15;
+  color: #ffffff;
+}
+
 @layer base {
   *,
   *::before,
@@ -46,7 +58,7 @@
 
 @layer utilities {
   .nav {
-    @apply relative ml-10 text-black font-semibold tracking-[1px] hover:text-blue-400;
+    @apply text-slate-100 relative ml-6 font-semibold  hover:text-blue-400;
   }
   .nav::after {
     @apply content-[''] bg-blue-500 h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300;
