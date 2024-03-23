@@ -1,12 +1,15 @@
 import React from "react";
+import { MdDateRange } from "react-icons/md";
 
 const EducationCard = ({ list }) => {
   return (
-    <div className="flex flex-col w-full transition duration-300 hover:scale-105">
-      <h1 className="text-xl">{list.session}</h1>
-      <h1 className="text-3xl font-semibold py-3">{list.title}</h1>
-      <h1 className="text-xl font-semibold pb-2">{list.university}</h1>
-      <hr className="mb-5 py-2" />
+    <div className="flex flex-row justify-between items-center w-full h-20 rounded-3xl py-4 px-10 bg-n-6 border-t-2 border-n-2 ">
+      <h1 className="text-xl font-mono flex flex-row gap-4">
+        <MdDateRange size={25} />
+        {list.session}
+      </h1>
+      <h1 className="text-xl font-mono font-semibold ">{list.title}</h1>
+      <h1 className="text-xl font-mono">{list.university}</h1>
     </div>
   );
 };

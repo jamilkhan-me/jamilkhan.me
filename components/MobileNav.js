@@ -16,7 +16,7 @@ function MobileNav() {
   } = useNavigation();
   return (
     <div
-      className={`fixed rounded-t-2xl inset-x-0 bottom-0 flex justify-center items-center w-full py-4 z-10 bg-gray-100  dark:bg-zinc-950 border-t dark:border-zinc-800 border-zinc-200 shadow-lg md:hidden ${navClass}`}
+      className={`fixed rounded-t-2xl inset-x-0 bottom-0 flex justify-center items-center w-full py-4 z-10 bg-n-5  dark:bg-zinc-950 border-t dark:border-zinc-800 border-zinc-200 shadow-lg md:hidden ${navClass}`}
     >
       <div className="flex flex-row justify-around items-center bg-transparent w-full">
         <Link href="/" className="flex items-center">

@@ -1,21 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 function BookNote({ note }) {
   return (
-    <Link href={`/notes/${note.slug}`}>
-      <div className="w-60 h-auto pb-4 border-2 rounded-xl shadow-lg hover:shadow-2xl cursor-pointer">
-        <Image
-          src={note.bookCover.url}
-          alt={note.title}
-          className="h-72 w-48 mx-5 my-4 rounded-xl"
-          width={500}
-          height={800}
-        />
-        <h1 className="flex justify-center text-lg px-4 font-bold">
-          {note.title}
-        </h1>
-        <h1 className="flex justify-center font-md">{note.author}</h1>
+    <Link className="book-wrapper" href={`/notes/${note.slug}`}>
+      <div class="book-items">
+        <div class="main-book-wrap">
+          <div class="book-cover">
+            <div class="book-inside"></div>
+            <div class="book-image">
+              <Image
+                src={note.bookCover.url}
+                alt={note.title}
+                width={500}
+                className="w-72 h-96"
+                height={800}
+              />
+              <div class="effect"></div>
+              <div class="light"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </Link>
   );

@@ -5,7 +5,7 @@ import SectionContainer from "./SectionContainer";
 function Layout({ children }) {
   return (
     <SectionContainer>
-      <div className="flex sm:w-[38rem] h-auto sm:mx-4 flex-col justify-between">
+      <div className="flex h-screen flex-col justify-between">
         <Header />
         <main className="mb-72">{children}</main>
         <Footer />
