@@ -20,26 +20,17 @@ export default async function PostPage({ searchParams }) {
 
   return (
     <main className="max-w-7xl mx-auto mt-48 mb-20 px-8">
-      <h1 className="heading">I&apos;ve been building a lot of things</h1>
-      <h1 className="text-lg font-light py-10 lg:px-32 flex items-center justify-center">
-        Come explore the fruits of my labor, from small experiments to
-        full-blown web applications, each project showcases my love for coding
-        and design.
+      <h1 className="heading">
+        All of my <span className="text-purple"> Technical Knowledge </span> in
+        one place
+      </h1>
+      <h1 className="text-center font-light text-lg flex items-center justify-center mx-auto max-w-4xl my-5">
+        I&apos;ve a knack for writing messy code, and a passion for writing
+        about it. Here, I share my journey with code, the mistakes I&apos;ve
+        made, and the lessons I&apos;ve learned along the way.
       </h1>
       <hr />
-      <div className="mb-8">
-        Display&nbsp;
-        {order === "newest" && (
-          <Link href="/blog?order=oldest" className="underline">
-            oldest
-          </Link>
-        )}
-        {order === "oldest" && (
-          <Link href="/blog?order=newest" className="underline">
-            newest
-          </Link>
-        )}
-      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10">
         {posts.map((post, idx) => {
           return <PostPreview key={idx} post={post} />;

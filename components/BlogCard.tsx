@@ -47,7 +47,13 @@ const BlogCard = (props: any) => {
               )}
             </AnimatePresence>
             <Card>
-              <img className="rounded-t-2xl w-full h-52" src={item.image}></img>
+              <Image
+                width={500}
+                height={500}
+                className="rounded-t-2xl w-full h-52"
+                src={item.image}
+                alt="blog image"
+              />
               <CardDate>{item.date}</CardDate>
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>

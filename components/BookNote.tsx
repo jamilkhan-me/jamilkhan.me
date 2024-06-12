@@ -12,7 +12,7 @@ const BookNote = (props: any) => {
       >
         <Link
           className="book-wrapper cursor-pointer"
-          href={`bookNote/${book.frontmatter.slug}`}
+          href={`bookNote/${book.slug}`}
         >
           <div className="book-items">
             <div className="main-book-wrap">

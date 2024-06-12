@@ -2,10 +2,7 @@ import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import RecentProjects from "@/components/RecentProjects";
 import BookNote from "@/components/BookNote";
-import getPostMetadata from "@/components/getPostMetadata";
 import PostPreview from "@/components/PostPreview";
-import getAllBookNotes from "@/utils/getAllBookNotes";
-import Navbar from "@/components/Navbar";
 import { getPosts } from "@/utils/posts";
 import { getNotes } from "@/utils/notes";
 
@@ -25,7 +22,10 @@ export default async function Home() {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
             {allPosts.posts.map((post) => (
-              <PostPreview post={post} />
+              <PostPreview
+                key={`${Math.floor(Math.random() * 1)}`}
+                post={post}
+              />
             ))}
           </div>
         </div>
@@ -37,7 +37,7 @@ export default async function Home() {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4">
             {allBookNotes.notes.map((book) => (
-              <BookNote book={book} />
+              <BookNote key={`${Math.floor(Math.random() * 1)}`} book={book} />
             ))}
           </div>
         </div>

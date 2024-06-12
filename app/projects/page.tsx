@@ -10,9 +10,14 @@ const Page = () => {
   return (
     <div className="mt-48 mb-20" id="projects">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        I&apos;ve been building a
+        <span className="text-purple"> lot of things</span>
       </h1>
+      <h2 className="text-center font-light text-lg flex items-center justify-center mx-auto max-w-4xl mt-5">
+        From small experiments to full-fledged web applications. Each one
+        reflects my passion for coding and design. Come explore the fruits of my
+        labor and see what I&apos;ve been up to!
+      </h2>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
         {projects.map((item) => (
           <div

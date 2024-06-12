@@ -5,12 +5,9 @@ import { skills } from "@/data";
 import Approach from "@/components/Approach";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Button } from "@/components/ui/moving-border";
-import { SparklesCore } from "@/components/ui/Sparkles";
 import Experience from "@/components/Experience";
 import Clients from "@/components/Clients";
 import PhotoGallary from "@/components/ui/PhotoGallary";
-import getPostMetadata from "@/utils/getPostMetadata";
-import PostPreview from "@/components/PostPreview";
 
 export default function AboutPage() {
   return (
