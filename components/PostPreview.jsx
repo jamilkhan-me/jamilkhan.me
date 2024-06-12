@@ -48,23 +48,23 @@ const PostPreview = (props) => {
           <div className="relative z-50">
             <Image
               className="rounded-t-2xl w-full h-56"
-              src={post.image}
-              alt={post.title}
+              src={post.frontmatter.image}
+              alt={post.frontmatter.title}
               width={500}
               height={200}
             />
             <small className="ml-4 mt-5 md:border-l md:border-zinc-700 md:pl-4  text-zinc-500 block">
-              {post.date}
+              {post.frontmatter.date}
             </small>
             <h4 className={cn("text-zinc-100 font-bold tracking-wide p-4")}>
-              {post.title}
+              {post.frontmatter.title}
             </h4>
             <p
               className={cn(
                 " text-zinc-400 tracking-wide leading-relaxed text-sm px-4"
               )}
             >
-              {post.subtitle}
+              {post.frontmatter.subtitle}
             </p>
           </div>
         </div>

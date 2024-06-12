@@ -1,28 +1,19 @@
+import { getNote } from "@/utils/notes";
+import Link from "next/link";
 import React from "react";
-import fs from "fs";
-import matter from "gray-matter";
-import Markdown from "markdown-to-jsx";
 
-function getBookNoteContent(slug: any) {
-  const folder = "bookNotes/";
-  const file = folder + `${slug}.mdx`;
-  const content = fs.readFileSync(file, "utf8");
-  const matterResult = matter(content);
-
-  return matterResult;
-}
-
-const BookNoteDetails = (props: any) => {
-  const slug = props.params.slug;
-  const book = getBookNoteContent(slug);
+export default async function BookNoteContent({ params }) {
+  const note = await getNote(params.slug);
 
   return (
-    <main className="max-w-5xl mx-auto mt-48 mb-20 px-8 ">
-      <div className="prose dark:prose-invert">
-        <Markdown>{book.content}</Markdown>
+    <article className="prose">
+      <div className="flex space-x-2 my-8">
+        {note.frontmatter.tags.map((tag) => (
+          <Link href={`/bookNote/?tags=${tag}`}>{tag}</Link>
+        ))}
       </div>
-    </main>
-  );
-};
 
-export default BookNoteDetails;
+      {note.content}
+    </article>
+  );
+}

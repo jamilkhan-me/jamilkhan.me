@@ -1,52 +1,49 @@
-import Markdown from "markdown-to-jsx";
-import React from "react";
-import fs from "fs";
-import matter from "gray-matter";
-import Code from "@/components/Code";
-import Image from "next/image";
+import { notFound } from "next/navigation";
+import { getPost as getPostNotCached, getPosts } from "@/utils/posts";
+import { cache } from "react";
+import Link from "next/link";
 
-function getPostContent(slug: any) {
-  const folder = "posts/";
-  const file = folder + `${slug}.mdx`;
-  const content = fs.readFileSync(file, "utf-8");
+const getPost = cache(async (slug) => await getPostNotCached(slug));
 
-  const matterResult = matter(content);
-  return matterResult;
+export async function generateStaticParams() {
+  const { posts } = await getPosts({ limit: 1000 });
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
-export default async function BlogPage(props: any) {
-  const slug = props.params.slug;
-  const post = getPostContent(slug);
+export async function generateMetadata({ params }) {
+  try {
+    const { frontmatter } = await getPost(params.slug);
+    return frontmatter;
+  } catch (e) {}
+}
+
+export default async function BlogPage({ params }) {
+  let post;
+
+  try {
+    post = await getPost(params.slug);
+  } catch (e) {
+    notFound();
+  }
 
   return (
-    <main className="max-w-5xl mx-auto mt-48 mb-20 px-8 ">
-      <div>
-        <h1 className="text-3xl font-semibold">{post.data.title}</h1>
-        <p className="text-sm font-thin py-3">
-          Published in
-          <span> {post.data.date} </span>
-        </p>
-        <Image
-          className="h-80 my-8"
-          src={post.data.image}
-          alt={post.data.title}
-          width={500}
-          height={500}
-        />
-      </div>
-      <div className="prose dark:prose-invert">
-        <Markdown
-          options={{
-            overrides: {
-              code: {
-                component: Code,
-              },
-            },
-          }}
-        >
-          {post.content}
-        </Markdown>
-      </div>
-    </main>
+    <div className="max-w-5xl mx-auto mt-48 mb-20 px-8">
+      <article className="prose dark:prose-invert">
+        <div className="flex space-x-2 mb-8">
+          {/* {post.frontmatter.tags.map((tag) => (
+          <Link
+          key={tag}
+          href={`/blog/?tags=${tag}`}
+          className="dark:text-gray-400 text-gray-500"
+          >
+          #{tag}
+          </Link>
+        ))} */}
+        </div>
+        {post.content}
+      </article>
+    </div>
   );
 }

@@ -6,10 +6,12 @@ import getPostMetadata from "@/components/getPostMetadata";
 import PostPreview from "@/components/PostPreview";
 import getAllBookNotes from "@/utils/getAllBookNotes";
 import Navbar from "@/components/Navbar";
+import { getPosts } from "@/utils/posts";
+import { getNotes } from "@/utils/notes";
 
 export default async function Home() {
-  const allPosts = await getPostMetadata();
-  const allBookNotes = await getAllBookNotes();
+  const allPosts = await getPosts();
+  const allBookNotes = await getNotes();
   return (
     <main className="relative  bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
       <div className="max-w-7xl w-full">
@@ -22,7 +24,7 @@ export default async function Home() {
             <span className="text-purple">recent writing</span>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
-            {allPosts.map((post) => (
+            {allPosts.posts.map((post) => (
               <PostPreview post={post} />
             ))}
           </div>
@@ -34,7 +36,7 @@ export default async function Home() {
             <span className="text-purple">recent reading</span>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4">
-            {allBookNotes.map((book) => (
+            {allBookNotes.notes.map((book) => (
               <BookNote book={book} />
             ))}
           </div>

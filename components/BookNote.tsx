@@ -12,7 +12,7 @@ const BookNote = (props: any) => {
       >
         <Link
           className="book-wrapper cursor-pointer"
-          href={`bookNote/${book.slug}`}
+          href={`bookNote/${book.frontmatter.slug}`}
         >
           <div className="book-items">
             <div className="main-book-wrap">
@@ -20,7 +20,7 @@ const BookNote = (props: any) => {
                 <div className="book-inside"></div>
                 <div className="book-image">
                   <Image
-                    src={book.image}
+                    src={book.frontmatter.image}
                     alt="image2"
                     width={500}
                     className="w-72 h-96"

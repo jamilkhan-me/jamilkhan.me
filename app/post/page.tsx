@@ -1,9 +1,22 @@
+import Pagination from "@/components/Pagination";
 import PostPreview from "@/components/PostPreview";
 import getPostMetadata from "@/utils/getPostMetadata";
+import { getPosts } from "@/utils/posts";
+import Link from "next/link";
 import React from "react";
 
-const PostPage = () => {
-  const postMetaData = getPostMetadata("posts");
+export default async function PostPage({ searchParams }) {
+  const tags = searchParams.tags?.split(",");
+  const order = searchParams.order ?? "newest";
+  const page = searchParams.page ?? 1;
+  const limit = searchParams.limit ?? 6;
+
+  const { posts, pageCount } = await getPosts({
+    tags,
+    newest: order === "newest",
+    page,
+    limit,
+  });
 
   return (
     <main className="max-w-7xl mx-auto mt-48 mb-20 px-8">
@@ -14,13 +27,27 @@ const PostPage = () => {
         and design.
       </h1>
       <hr />
+      <div className="mb-8">
+        Display&nbsp;
+        {order === "newest" && (
+          <Link href="/blog?order=oldest" className="underline">
+            oldest
+          </Link>
+        )}
+        {order === "oldest" && (
+          <Link href="/blog?order=newest" className="underline">
+            newest
+          </Link>
+        )}
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10">
-        {postMetaData.map((post, idx) => {
+        {posts.map((post, idx) => {
           return <PostPreview key={idx} post={post} />;
         })}
       </div>
+      <div className="mt-8">
+        <Pagination pageCount={pageCount} />
+      </div>
     </main>
   );
-};
-
-export default PostPage;
+}
