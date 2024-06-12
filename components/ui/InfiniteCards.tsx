@@ -15,6 +15,7 @@ export const InfiniteMovingCards = ({
     quote: string;
     name: string;
     title: string;
+    image: any;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";

@@ -19,11 +19,9 @@ If you don't already have an account then [sign up here](https://portal.aws.amaz
 
 Once you are signed up, you should be able to log in to the [AWS Console](https://aws.amazon.com/console/). It might look overwhelming if you're seeing for the first time.
 
-<CodeHeader text="TestComponent.tsx" />
-```tsx{" "}
-
-import CodeHeader from '@/app/components/CodeHeader'; 
-import type {MDXComponents} from 'mdx/types';
+```tsx
+import CodeHeader from "@/app/components/CodeHeader";
+import type { MDXComponents } from "mdx/types";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {

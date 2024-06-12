@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { usePathname } from "next/navigation";
 
-export default function Pagination({ pageCount }) {
+export default function Pagination({ pageCount }: any) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const pages = [];
