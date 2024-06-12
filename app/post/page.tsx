@@ -1,11 +1,9 @@
 import Pagination from "@/components/Pagination";
 import PostPreview from "@/components/PostPreview";
-import getPostMetadata from "@/utils/getPostMetadata";
 import { getPosts } from "@/utils/posts";
-import Link from "next/link";
 import React from "react";
 
-export default async function PostPage({ searchParams }) {
+export default async function PostPage({ searchParams }: any) {
   const tags = searchParams.tags?.split(",");
   const order = searchParams.order ?? "newest";
   const page = searchParams.page ?? 1;
