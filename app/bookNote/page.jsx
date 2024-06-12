@@ -4,7 +4,7 @@ import Link from "next/link";
 import BookNote from "@/components/BookNote";
 import Pagination from "@/components/Pagination";
 
-export default async function BookNotePage({ searchParams }: any) {
+export default async function BookNotePage({ searchParams }) {
   const tags = searchParams.tags?.split(",");
   const order = searchParams.order ?? "newest";
   const page = searchParams.page ?? 1;

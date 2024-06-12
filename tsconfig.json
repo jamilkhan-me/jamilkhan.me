@@ -27,7 +27,11 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/bookNote/[slug]/page.jsx",
-    "app/post/[slug]/page.jsx"
+    "app/post/[slug]/page.jsx",
+    "app/page.jsx",
+    "app/post/page.jsx",
+    "app/bookNote/page.jsx",
+    "app/about/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

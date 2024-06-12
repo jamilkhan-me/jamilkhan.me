@@ -4,7 +4,7 @@ import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 
 const BlogCard = (props: any) => {
   const { post, idx } = props;

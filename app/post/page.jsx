@@ -3,7 +3,7 @@ import PostPreview from "@/components/PostPreview";
 import { getPosts } from "@/utils/posts";
 import React from "react";
 
-export default async function PostPage({ searchParams }: any) {
+export default async function PostPage({ searchParams }) {
   const tags = searchParams.tags?.split(",");
   const order = searchParams.order ?? "newest";
   const page = searchParams.page ?? 1;

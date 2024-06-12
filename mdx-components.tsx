@@ -1,6 +1,5 @@
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
-import CodeHeader from "@/components/CodeHeader";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -9,7 +8,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre: (props) => (
       <pre {...props} className="rounded-lg border-2 border-zinc-500 p-4" />
     ),
-    CodeHeader,
+
     ...components,
   };
 }
