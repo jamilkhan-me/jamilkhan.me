@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Page = () => {
   return (
-    <div className="mt-48 mb-20" id="projects">
+    <div className=" mt-48 mb-20 px-8" id="projects">
       <h1 className="heading">
         I&apos;ve been building a
         <span className="text-purple"> lot of things</span>

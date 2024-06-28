@@ -19,11 +19,11 @@ export default async function BookNoteContent({ params }) {
           />
         </div>
         <div>
-          <h1>Book Summary</h1>
-          <h1 className="text-4xl text-zinc-200 font-semibold ">
+          <h3 className="text-md font-medium ">Book Summary</h3>
+          <h1 className="text-2xl sm:text-4xl text-zinc-200 font-semibold ">
             {note.frontmatter.title}
           </h1>
-          <h2>By {note.frontmatter.author}</h2>
+          <h2 className="text-md font-medium ">By {note.frontmatter.author}</h2>
           <small className=" mt-5  text-zinc-400 text-md font-light tracking-wide block">
             Date Read: {note.frontmatter.date}
           </small>

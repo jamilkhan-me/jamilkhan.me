@@ -8,7 +8,7 @@ export default async function BookNotePage({ searchParams }) {
   const tags = searchParams.tags?.split(",");
   const order = searchParams.order ?? "newest";
   const page = searchParams.page ?? 1;
-  const limit = searchParams.limit ?? 8;
+  const limit = searchParams.limit ?? 100;
 
   const { notes, pageCount } = await getNotes({
     tags,

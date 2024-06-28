@@ -7,7 +7,7 @@ export default async function PostPage({ searchParams }) {
   const tags = searchParams.tags?.split(",");
   const order = searchParams.order ?? "newest";
   const page = searchParams.page ?? 1;
-  const limit = searchParams.limit ?? 6;
+  const limit = searchParams.limit ?? 100;
 
   const { posts, pageCount } = await getPosts({
     tags,

@@ -31,7 +31,7 @@ export default function AboutPage() {
           <BackgroundGradient className="rounded-[22px] max-w-sm p-4  bg-white dark:bg-zinc-900">
             <Image
               src="/myImages/image1.jpg"
-              alt="jordans"
+              alt="jamil"
               height={600}
               width={400}
               className="object-contain rounded-[22px]"

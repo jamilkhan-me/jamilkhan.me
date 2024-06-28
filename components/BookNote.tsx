@@ -6,7 +6,7 @@ import React from "react";
 const BookNote = (props: any) => {
   const { book } = props;
   return (
-    <div className="max-w-7xl my-8 mx-auto px-8">
+    <div className="max-w-7xl my-8 mx-auto px-10">
       <div
         className={cn("grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3 ")}
       >

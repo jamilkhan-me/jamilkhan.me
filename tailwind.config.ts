@@ -31,10 +31,6 @@ const config = {
     },
     extend: {
       typography: {
-        fontFamily: {
-          sans: ["var(--font-geist-sans)"],
-          mono: ["var(--font-geist-mono)"],
-        },
         DEFAULT: {
           css: {
             h1: {
@@ -50,27 +46,27 @@ const config = {
               color: "#FAB95B",
             },
 
-            // code: {
-            //   color: "#DDE6ED", // Default text color
-            //   backgroundColor: "#240750", // Background color similar to VSCode's default theme
-            //   padding: "2px 4px", // Add padding to inline code
-            //   borderRadius: "4px", // Add border radius
-            //   fontFamily: "monospace", // Use a monospaced font
-            // },
-            // "pre code": {
-            //   padding: 0, // Remove padding for code inside pre
-            // },
-            // pre: {
-            //   fontFamily: "monospace",
-            //   background: "#344C64", // Background color for pre blocks
-            //   color: "#FAB95B", // Text color for pre blocks
-            //   padding: "16px", // Add padding to pre blocks
-            //   borderRadius: "8px", // Add border radius to pre blocks
-            //   zIndex: "100",
-            //   lineHeight: "1.5", // Line height for better readability
-            //   overflowX: "auto", // Enable horizontal scrolling for long code lines
-            // },
-            // Additional styles for different token types
+            code: {
+              color: "#DDE6ED", // Default text color
+              backgroundColor: "#240750", // Background color similar to VSCode's default theme
+              padding: "2px 4px", // Add padding to inline code
+              borderRadius: "4px", // Add border radius
+              fontFamily: "monospace", // Use a monospaced font
+            },
+            "pre code": {
+              padding: 0, // Remove padding for code inside pre
+            },
+            pre: {
+              fontFamily: "monospace",
+              background: "#344C64", // Background color for pre blocks
+              color: "#FAB95B", // Text color for pre blocks
+              padding: "16px", // Add padding to pre blocks
+              borderRadius: "8px", // Add border radius to pre blocks
+              zIndex: "100",
+              lineHeight: "1.5", // Line height for better readability
+              overflowX: "auto", // Enable horizontal scrolling for long code lines
+            },
+            //Additional styles for different token types
             ".hljs-comment": { color: "#6a9955" },
             ".hljs-keyword": { color: "#569cd6" },
             ".hljs-string": { color: "#ce9178" },
