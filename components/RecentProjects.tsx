@@ -14,7 +14,7 @@ const RecentProjects = () => {
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
         {projects.slice(0, 4).map((item) => (
-          <Link href={item.link} target="_blank">
+          <Link href={item.link} target="_blank" key={item.id}>
             <div
               className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
               key={item.id}
