@@ -19,13 +19,13 @@ export default async function PostPage({ searchParams }) {
   return (
     <main className="max-w-7xl mx-auto mt-48 mb-20 px-8">
       <h1 className="heading">
-        All of my <span className="text-purple"> Technical Knowledge </span> in
-        one place
+        <span className="text-purple"> The Knowledge </span> I want to share
       </h1>
-      <h1 className="text-center font-light text-lg flex items-center justify-center mx-auto max-w-4xl my-5">
-        I&apos;ve a knack for writing messy code, and a passion for writing
-        about it. Here, I share my journey with code, the mistakes I&apos;ve
-        made, and the lessons I&apos;ve learned along the way.
+      <h1 className="text-center font-light text-md flex items-center justify-center mx-auto max-w-4xl my-5">
+        I don't write nearly enough to be good but this is my place to practice.
+        I write articles on a diverse range of non-fiction topics. Long and
+        short, serious and fun, good and bad. <br /> <br />I hope you can find
+        something you enjoy! 😊
       </h1>
       <hr />
 
